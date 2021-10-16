@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 =======
 # Curso de Javascript
 ## Author: JonMircha
