@@ -3,7 +3,7 @@
 ### Canal de Youtube: https://www.youtube.com/c/jonmircha  
 [Click aquí para aprender Javascript GRATIS con JonMircha 👈](https://aprendejavascript.org)  
 *Aquí encontraras todas las notas y ejercicios que yo fuí escribiendo del curso de JavasCript de Jonmircha*  
-![](https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/200px-Unofficial_JavaScript_logo_2.svg.png)
+![](https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/200px-Unofficial_JavaScript_logo_2.svg.png)  
 
 
 *Nota: Los siguientes temas NO son todos los que se aprenderán en el curso, hay muchos más. Solo son una pequeña parte de lo que el curso ofrece. Los ejemplos son con el fin de mostrar algunos de los temas a tratar 🤯*  
