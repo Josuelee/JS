@@ -1,3 +1,5 @@
+<<<<<<< HEAD
+=======
 # Curso de Javascript
 ## Author: JonMircha
 ### Canal de Youtube: https://www.youtube.com/c/jonmircha  
