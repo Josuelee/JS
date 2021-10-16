@@ -22,14 +22,14 @@
   Uso de Módulos  
 ### ASINCRONÍA
   Funciones asincronas (Async+Await)
-     Promesas 
-     Callbacks
-     EvenLoop 
+     Promesas  
+     Callbacks  
+     EvenLoop  
 ### PROGRAMACIÓN ORIENTADA A OBJETOS
  Prototipos
-    Clases
-    Herencia
-    Getters & Setters
+    Clases  
+    Herencia  
+    Getters & Setters  
 ### NUEVAS CARACTERÍSTICAS DE JAVASCRIPT 
 Symbols  
 Set  
@@ -50,5 +50,5 @@ Delegación de eventos
 XMLHttpsRequest  
 Promesas con AJAX  
 Funciones Asincronas con AJAX  
-Librería Axios
+Librería Axios  
 
