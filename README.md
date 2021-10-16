@@ -8,18 +8,18 @@
 
 *Nota: Los siguientes temas NO son todos los que se aprenderán en el curso, hay muchos más. Solo son una pequeña parte de lo que el curso ofrece. Los ejemplos son con el fin de mostrar algunos de los temas a tratar 🤯*  
 ### BASES DE JAVASCRIPT (ECMASCRIPT 6)
-  Declaración de variables
-  Funciones & Arrow Functions
-  Objetos
-  Destructuración
-  Arrays
-  Condicionales
-  Ciclos
-  Parametros REST & Operador Spread
-  Expresiones Regulares
-  Objeto Math
-  Objeto Date
-  Uso de Módulos
+  Declaración de variables  
+  Funciones & Arrow Functions  
+  Objetos  
+  Destructuración  
+  Arrays  
+  Condicionales  
+  Ciclos  
+  Parametros REST & Operador Spread  
+  Expresiones Regulares  
+  Objeto Math  
+  Objeto Date  
+  Uso de Módulos  
 ### ASINCRONÍA
   Funciones asincronas (Async+Await)
      Promesas 
