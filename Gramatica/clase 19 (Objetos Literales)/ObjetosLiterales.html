@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Objetos literales</title>
+    
+
+</head>
+<bodyd>
+    <h1></h1>    
+    <script>
+        /* Los objetos literales son formas mas sencillas de darle el valor de una variable a una propiedad de un objeto */        
+        /*anteriormente si queria agregarle un valor de una variable a una propiedad de un objeto se hacia de esta forma*/
+        let nombre = "Peter",
+        apellido = "Pan"
+
+        const presentacion = {
+            nombre: nombre,  //le estoy dando el valor de la variable nombre a la propiedad nombre
+            apellido: apellido,
+            funcion: function(){
+                console.log("Estoy declarando un metodo de la forma antigua")
+            }
+        }
+
+        /*Esta es la nueva forma desde el estandar ecmascript 6 o desde el 2015*/
+        const presentacionNueva = {
+            nombre,  //JS detecta que se llama igual que la variable nombre de arriba y le da los datos automaticamente
+            apellido,
+            edad: 2,
+            funcionNueva(){ //Se omiten los puntos y el termino function y queda de esta forma los metodos en objetos
+                console.log("Estoy declarando un metodo de la nueva forma en un objeto")
+            }
+            }
+
+            console.log(presentacion);        
+            console.log(presentacionNueva);        
+
+
+    </script>
+</body>
+</html>

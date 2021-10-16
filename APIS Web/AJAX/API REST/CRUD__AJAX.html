@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>CRUD CON AJAX</title>  
+  <meta name='viewport' content='width=device-width, initial-scale=1'>      
+</head>
+<body>
+  <h1 >CRUD API REST CON AJAX</h1>
+  <section id="section">
+    <article>
+      <h2 id="title">Ingresar Cancion</h2>
+      <form id="form">
+        <input type="hidden" name="id"  readonly>
+        <br>
+        <input type="text" placeholder="Descripcion" name="description"  required>
+        <br>
+        <input type="text" placeholder="Autor" name="autor" required>
+        <br>
+        <input type="submit" value="Enviar" >        
+      </form>
+    </article>
+    <article>
+      <h2>Ver Canciones</h2>
+      <table id="table">
+        <thead>
+          <tr>
+            <th>Descripcion</th>
+            <th>Autor</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </article>
+  </section>
+    <template id="template">
+      <tr>
+        <td id="descriptionSong"></td>
+        <td id="autorSong"></td>
+        <td>
+          <button id="editar">Editar</button>
+          <button id='eliminar'>Eliminar</button>
+        </td>
+      </tr>
+    </template>
+
+  <script>
+    const d = document,
+    $fragment = document.createDocumentFragment(),
+    $table = d.getElementById("table")
+    $template = d.getElementById("template").content,
+    $form = d.getElementById("form"),
+    $title = document.getElementById("title")
+
+    const ajax = (options)=>{
+      const {method , url , succes, error , data} = options
+
+      const xhr = new XMLHttpRequest()
+
+      xhr.addEventListener("readystatechange", e=>{
+        if(xhr.readyState !== 4) return                
+
+        if(xhr.status > 199 && xhr.status < 300){
+          let json = JSON.parse(xhr.responseText)
+          succes(json)
+        }else{
+          let message = xhr.statusText || "Ocurrio un error no se encontraron los datos de la api"
+          error(`${xhr.status}: ${message}`)          
+        }
+      })
+
+      xhr.open(method || "GET" , url)
+      xhr.setRequestHeader('Content-Type' , 'application/json; charset=utf-8')      
+      xhr.send(JSON.stringify(data))            
+
+    }
+
+
+    const getAll =()=>{
+      ajax({
+        method: "GET",
+        url: "http://localhost:5555/Canciones",
+        succes(json){          
+          json.forEach(el=>{
+            $template.getElementById('descriptionSong').textContent = el.descripcion                        
+            
+            $template.getElementById('autorSong').textContent = el.autor            
+            $template.getElementById('editar').dataset.id = el.id
+            $template.getElementById('editar').dataset.descripcion = el.descripcion
+            $template.getElementById('editar').dataset.autor = el.autor
+            $template.getElementById('eliminar').dataset.eliminar = el.id
+            let $clone = d.importNode($template ,true)
+            $fragment.append($clone)                        
+          })
+
+          $table.querySelector(`tbody`).prepend($fragment)
+          
+        },
+        error(err){
+          console.warn(err)
+          $table.insertAdjacentHTML('afterend' , `<p><b>${err}</b></p>`)
+        }            
+      })
+    }
+    
+    
+    d.addEventListener('DOMContentLoaded' , getAll);
+    
+    d.addEventListener("submit" , e=>{      
+      if(e.target === $form){
+        e.preventDefault()        
+        if(!e.target.id.value){
+          //POST Create        
+          ajax({
+            method:"POST",
+            url: "http://localhost:5555/Canciones",
+            succes: (res)=> location.reload(),
+            error: (err)=> $form.insertAdjacentHTML('afterend' , `<p><b>${err}</b></p>`),
+            data:{
+              descripcion: e.target.description.value,
+              autor: e.target.autor.value
+            }            
+          })
+        }else {
+          //PUT Update
+          ajax({
+            method:"PUT", 
+            url: `http://localhost:5555/Canciones/${e.target.id.value}`,
+            succes: (res)=> location.reload(),
+            error: (error)=> $form.insertAdjacentHTML('afterend',`<p><b>${error}</b></p>`),
+            data:{
+              descripcion: e.target.description.value,
+              autor: e.target.autor.value
+            }   
+          })
+        }
+      }
+    })    
+    
+    d.addEventListener('click' , (e)=>{
+      if(e.target.matches('#editar')){  
+        $title.textContent = 'Editar cancion'
+        $form.id.type = 'text'                
+        $form.id.value = e.target.dataset.id        
+        $form.description.value = e.target.dataset.descripcion
+        $form.autor.value = e.target.dataset.autor
+      }else if(e.target.matches("#eliminar")){
+        if(confirm(`Desea eliminar el id ${e.target.dataset.eliminar}`)){
+
+          console.log(d.getElementById('editar').dataset.id)
+          ajax({
+            method:"DELETE", 
+            url: `http://localhost:5555/Canciones/${e.target.dataset.eliminar}`,
+            succes: ()=> {},
+            error:(err)=> alert('Error al eliminar')
+          })
+        }
+      }
+    })    
+             
+  </script>
+</body>
+</html>

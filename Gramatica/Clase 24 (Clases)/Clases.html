@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Clases y herencia</title>
+    
+</head>
+<body>
+    <script>
+        /* Clase Es el modelo a seguir , dando un ejemplo una Clase es la idea de un objeto y ya cuando instancio esa clase(creando un objeto)
+        llevo esa idea a la realidad 
+        Clase tiene los metodos , propiedades que se le agregaran al objeto*/
+
+        /* Los metodos son las acciones que hara el objeto (funciones) */
+        /* Los atributos son las propiedades de el objeto (variables) */
+
+        /* El constructor crea son las propiedades o valores que se le dara al objeto */        
+            /*El método constructor es un metodo especial para crear e inicializar los atributos de un objeto creado a partir de una clase.*/
+        
+
+        class Amigo{            
+            constructor(nombre,apellido,genero,comidaFavo){
+                this.nombre = nombre;
+                this.apellido = apellido;
+                this.genero = genero;                  
+                this.comidaFavo = comidaFavo;      
+            }
+
+            comidaFav(){
+                console.log(`${this.comidaFavo} la comida favorita de ${this.nombre}`);
+            }            
+
+            misDatos(){
+                console.log(`Mi nombre es ${this.nombre} ${this.apellido} y soy ${this.genero}`);
+            }
+        }
+
+        /*  La herencia es una manera de crear una clase como una versión especializada de una o más clases (Ja1vaScript sólo permite herencia simple).
+         La clase especializada comúnmente se llama hija o secundaria, y la otra clase se le llama padre o primaria */
+
+         /* El metodo super manda a llamar el constructor de la clase padre */                
+        console.log("----------HERENCIA----------")
+        class MejorAmigo extends Amigo{
+            constructor(nombre,apellido,genero,comidaFavo,colorFavorito,cumple){
+                super(nombre,apellido,genero,comidaFavo)                
+                this.colorFavorito = colorFavorito;
+                this.cumple = cumple;
+            }            
+            colorFav(){
+                console.log(`Mi nombre es ${this.nombre} y mi color favorito es ${this.colorFavorito} `);                
+            }                     
+
+            birthday(){
+                console.log(`Soy ${this.nombre} y el dia de mi cumpleaños es ${this.cumple}`);
+            }
+
+            comidaFav(){
+                console.log(`Estoy tan feliz ya que hoy comere mi comida favorita que es ${this.comidaFavo}`);
+            }            
+
+        }
+
+        const josue = new Amigo("Josue" , "Lee" , "Hombre" , "Kimchi");        
+        const jenni = new MejorAmigo("Jenni" , "Rivera" , "Mujer" , "Lamion", "Rojo" , "12 de abril");
+        console.log(josue)
+        josue.comidaFav();
+        josue.misDatos();
+
+        console.log(jenni)
+        jenni.comidaFav();
+        jenni.misDatos();
+        jenni.colorFav();
+        jenni.birthday();
+
+        
+        
+
+    </script>
+</body>
+</html>

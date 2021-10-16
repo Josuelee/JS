@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>REST API CON WORLD PRESS</title>
+    <link rel="stylesheet" href="css/wp.css">    
+  </head>
+  <body>
+    <h1 class="main-title">WordPress REST API</h1>
+    <article id="site" class="site"></article>
+    <section id="posts" class="posts"></section>
+    <img id="loader" src="assets/img/oval.svg" alt="loading" class="loader" />
+    <template id="post-template">
+      <article class="post">
+        <img class="post__image" />
+        <aside>
+          <h2 class="post__title"></h2>
+          <figure class="post__author"></figure>
+          <small class="post__date"></small>
+          <a class="post__link" target="_blank">Ver publicación original</a>
+          <p class="post__excerpt"></p>
+          <div class="post__categories"></div>
+          <div class="post__tags"></div>
+          <details class="post__content">
+            <summary class="post__summary">Ver contenido de la publicacion</summary>
+            <article class="post__article"></article>
+          </details>
+        </aside>
+      </article>
+      <hr>
+    </template>
+    
+
+    <script src="js/Clase139-143(WP-API REST).js"></script>
+  </body>
+</html>

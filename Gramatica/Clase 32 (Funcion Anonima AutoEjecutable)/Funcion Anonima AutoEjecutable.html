@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Funcion Anonima Auto Ejecutable</title>        
+</head>
+<body>
+    <h1>Funcion Anonima AutoEjecutable</h1>
+    <script>
+        /* Funcion Anonima AutoEjecutable , es una funcion que no tiene nombre , que se ejecuta al momento de creacion */
+        /* Se usan cuando quiero crear pedazos de codigos y que se ejecuten ellos al instante , puedo utilizar objetos y  crear variables
+        dentro del codigo y aunque el nombre se repita en otro modulo , no habra problema */
+        /* Muy importante esta funcion si debe terminar en punto y coma */
+        (function(d,w,c){
+            c.dir(d)
+            c.log(w)
+            c.log("Soy un pedazo de codigo de mi primera funcion anonima auto ejecutable")
+            let nombre = "Peter"
+        })(document , window, console) ;
+
+        /* Estos son los parentesis de invocacion , un ejemplo cuando invocas alert()-Son estos 
+        mismos parentesis los que se usan para la ejecucion , y ahi le paso el valor de los parametros de arriba 
+        d=document , w = window , c = console , ahora dentro de mi funcion anonima puedo utilzar todos estos objetos*/
+
+        /* Tipos de funciones anonimas autoejecutables */
+        //1-Clasica
+        (function(){
+            console.log("Version Clasica")
+        })();
+
+        //2-La Crockford (JavaScript The Good Parts)
+        ((function(){
+            console.log("Version Crockford")
+        }) () );
+        
+        //3-Unaria
+        +function(){
+            console.log("Version Unaria")
+        }();
+
+        //4-Facebook
+        !function(){
+            console.log("Version Facebook")
+        }();
+         
+        
+    
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>EjemploAsincronismo</title>        
+</head>
+<body>
+    
+     <!-- **********     Curso JavaScript: 45. Asincronía y el Event Loop - #jonmircha     ********** 
+
+    Antes de explicar como funciona el modelo de JavaScript es importante entender algunos conceptos:
+    Procesamiento Single thread y Multi thread. - Single thread significa que la ejecucion es de una linea (event Loop)
+    Operaciones de CPU y Operaciones de I / O. - Operaciones input/output , se ejecutan cuando se realiza una peticion a una api etc
+    Operaciones Concurrentes y Paralelas.
+    Operaciones Bloqueantes y No Bloqueantes. - no bloqueantes llega la peticion de la tarea y le da inmediatamente el mando al hilo
+    no tiene que esperar hasta que termine la tarea para darle el mando al hilo
+    Operaciones Síncronas y Asíncronas - Asincrono puede realizar la tarea en un futuro , no tiene que ser inmediatamente
+
+     Javascript usa un modelo asíncrono y no bloqueante, con un loop de eventos implementado en un sólo hilo,
+    (single thread) para operaciones de entrada y salida (input/output). -->
+    <script>                
+        (()=>{
+
+        console.log("Inicio");        
+        const dos = ()=>{
+            setTimeout(()=>{
+                console.log("Dos")
+            } , 800 );            
+        }
+
+        const uno = ()=>{
+            setTimeout(()=>{
+                console.log("Uno")
+            } ,400);             
+
+            dos();
+            console.info("tres");
+
+            (()=>{
+                setTimeout(()=>{
+                    console.log("cuatro")
+                },1200)
+            })()
+
+        }
+        uno();        
+        console.log("fin");
+                
+        })();
+    </script>
+
+
+     
+
+</body>
+</html>

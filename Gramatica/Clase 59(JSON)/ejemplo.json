@@ -1,0 +1,9 @@
+{
+    "nombre": "Peter",
+    "objeto": {
+        "nombreObjeto": "PeterObjeto"
+    },
+    "numero": 99,
+    "arreglo": [1,2,"moped",4],
+    "true": true
+}

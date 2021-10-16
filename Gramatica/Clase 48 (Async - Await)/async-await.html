@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Async y await</title>    
+</head>
+<body>
+    <!-- Async / Await
+    Las promesas fueron una gran mejora respecto a las callbacks para controlar la asincronía en JavaScript, 
+    sin embargo pueden llegar a ser muy verbosas a medida que se requieran más y más métodos .then().
+
+    Las funciones asíncronas (async / await) surgen para simplificar el manejo de las promesas.
+
+    La palabra async declara una función como asíncrona e indica que una promesa será automáticamente devuelta.
+
+    Podemos declarar como async funciones con nombre, anónimas o funciones flecha.
+
+    La palabra await debe ser usado siempre dentro de una función declarada como async y esperará de forma asíncrona 
+    y no bloqueante a que una promesa se resuelva o rechace. -->
+
+    <script>
+        const obtenerNombre  = (name) =>{
+            return new Promise((resolve , reject)=>{
+                if((typeof name !== "string") || (!name)) return reject(`No es una cadena o la cadena viene vacia`);                
+                setTimeout(()=>{
+                    resolve(name);    
+                },Math.random() * 1000);                
+            })
+        }
+
+        const saludar = async () =>{   
+            try{
+                let nombre1 = await obtenerNombre("peter")//estoy retornando la promesa
+                console.log(nombre1);                
+                let nombre2 = await obtenerNombre("josue")
+                console.log(nombre2);
+                
+            }catch(error){
+                console.error(error);
+            }                                                           
+                
+        }
+        saludar()
+    </script>
+</body>
+</html>

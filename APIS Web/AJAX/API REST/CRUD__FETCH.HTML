@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">  
+  <title>CRUD CON FETCH</title>
+</head>
+<body>
+  <h1>CRUD CON API FETCH</h1>
+  <section>
+    <article>
+      <h2 id='title'>Ingresar una cancion</h2>
+      <form id='form'>
+        <input type='hidden' name ='id'><br>
+        <input type='text' name='description' placeholder='Ingrese su descripcion' required> <br>
+        <input type='text' name='autor' placeholder = 'Ingrese su autor' required> <br><br>        
+        <input type='submit' value = 'enviar'> 
+      </form>
+      <br>
+    </article>
+    <article>
+      <table id='table'>
+        <theader>
+          <tr>
+            <th>Descripcion</th>
+            <th>Autor</th>
+            <th>Accion</th>
+          </tr>
+        </theader>
+        <tbody id='tbody'></tbody>
+      </table>
+    </article>
+  </section>
+
+  <template id='template'>
+    <tr>
+      <td id = 'description'></td>
+      <td id='autor'></td>
+      <td>
+        <button id='edit' >Editar</button>
+        <button id='delete'>Delete</button>
+      </td>
+    </tr>
+  </template>
+  
+  <script>
+    const d= document,
+    $form = d.getElementById('form'),
+    $table = d.getElementById('table'),
+    $title = d.getElementById('title'),
+    $template = d.getElementById('template').content,
+    $fragment = d.createDocumentFragment()
+
+    d.addEventListener('DOMContentLoaded' , async ()=>{
+      try{       
+      let response = await fetch('http://localhost:5555/Canciones'),
+      json= await response.json()
+      if(!response.ok) throw {status: response.status , statusText: response.statusText}
+      console.log(json)      
+      json.forEach(el=>{
+        $template.getElementById('description').textContent = el.descripcion         
+        $template.getElementById('autor').textContent = el.autor
+        $template.getElementById('edit').dataset.id = el.id
+        $template.getElementById('edit').dataset.description = el.descripcion
+        $template.getElementById('edit').dataset.autor = el.autor
+        $template.getElementById('delete').dataset.id= el.id
+
+        const $clone = d.importNode($template, true)
+        $fragment.append($clone)
+      }) 
+        $table.querySelector('#tbody').append($fragment)                    
+      }catch(err){
+        console.warn(err)
+        let message = err.statusText || "Ocurrio un error al encontrar los datos"
+        $form.insertAdjacentHTML('afterend' , `<p><b>${err.status}: ${message}</b></p>`)
+      }
+    })
+
+    d.addEventListener('submit' , async e=>{
+      if($form === e.target){
+        if(!e.target.id.value){
+          //POST   
+          try {
+            let res= await fetch('http://localhost:5555/Canciones', {          
+              method: "POST",
+              headers: {
+                "Content-type": "application/json; charset=utf-8"
+              },
+              body: JSON.stringify(
+                {
+                  descripcion: e.target.description.value,
+                  autor: e.target.autor.value
+                }
+              )
+            } )        
+            if(!res.ok) throw {status:res.status , statusText: res.statusText}
+            location.reload()
+          } catch (err) {
+            let errMessage = err.statusText || "Error para poder ingresar un dato"
+            $form.insertAdjacentHTML('afterend' , `<p><b>${errMessage}</b></p>`)
+          }                                          
+          
+        }else{
+          //PUT       
+          try {            
+            let res = await fetch(`http://localhost:5555/Canciones/${e.target.id.value}` , {
+              method: "PUT",
+              headers: {
+                "Content-type": "application/json; charset=utf-8"
+              },
+              body: JSON.stringify({
+                descripcion: e.target.description.value,
+                autor: e.target.autor.value            
+              })              
+            }) 
+            
+            if(!res.ok) throw {status: res.status , statusText: res.statusText}
+            location.reload()
+          } catch (err) {
+            console.log(err)
+            let errMessage = err.statusText || "Error para poder editar un dato"
+            $form.insertAdjacentHTML('afterend' , `<p><b>${errMessage}</b></p>`)
+          }
+          
+          
+        }
+      }
+      
+    })
+
+    d.addEventListener('click' , async e=>{
+      if(e.target.matches('#edit')){
+        $title.textContent = 'Editar Cancion'
+        $form.id.type = 'text'        
+        $form.description.value = e.target.dataset.description
+        $form.id.value = e.target.dataset.id
+        $form.autor.value = e.target.dataset.autor
+        
+        
+      }else if (e.target.matches('#delete')){        
+        if(confirm("Esta seguro que desea eliminar la cancion?")){
+          try {          
+            let res= await fetch(`http://localhost:5555/Canciones/${e.target.dataset.id}` , {
+              method: "delete" 
+            })          
+            location.reload()
+          if(!res.ok) throw {status: res.status , statusText: res.statusText}
+          } catch (err) {
+            alert("Error al eliminar")
+          }
+        }                
+      }
+    })
+  </script>
+</body>
+</html>

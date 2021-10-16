@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+  <body>
+    <h1>Practica de ciclos</h1>
+    <script>
+      //entra solo cuando se cumpla la condicion
+      let contador = 0;
+      let contador2 = 0;
+
+      while (contador < 10) {
+        console.log(contador);
+        contador++;
+      }
+      //aunque no cumpla la condicion entra 1 vez y luego , ya si no la cumple no entra
+      console.log("Do while:");
+      do {
+        console.log(contador2);
+        contador2++;
+      } while (contador2 < 10);
+
+      console.log("Do for:");
+      for (let x = 0; x < 20; x++) {
+        console.log(x);
+      }
+      const arreglo = [
+        "guatemala",
+        "el salvador",
+        "honduras",
+        "nicaragua",
+        "panama",
+        "linduras",
+        "feo"
+      ];
+      for (let x = 0; x < arreglo.length; x++) {
+        console.log(arreglo[x]);
+      }
+      const josue = {
+        nombre: "Josue lee ramirez ",
+        suma: function (n1 = 1, n2 = 2) {
+          let promedio = (n1 + n2) / 2;
+          return promedio;
+        },
+        amigo: "eres mi mejor amigo"
+         
+      }
+      //recorre objeto
+      for (propiedad in josue){
+          console.log(josue[propiedad])
+      }
+//recorre toda variable que se pueda iterar
+      for (casilla of arreglo){
+          console.log(casilla);          
+      }
+      let ejemplo = "hola a todos";
+      for (casilla of ejemplo){
+          console.log(casilla)
+      }
+      
+      
+    </script>
+  </body>
+</html>

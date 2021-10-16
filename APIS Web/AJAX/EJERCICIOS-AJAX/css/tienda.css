@@ -1,0 +1,45 @@
+*, 
+*::after,
+*::before{
+  box-sizing: border-box;
+}
+
+html{
+  box-sizing: inherit;
+}
+
+body{
+  margin: 0;    
+}
+
+img{
+  max-width: 100%;
+  display: block;
+  height: auto;
+}
+
+.tacos{  
+  margin: 0 auto;
+  width: 80%;
+  display: grid ;  
+  grid-template-columns: repeat(auto-fit, minmax(200px , 1fr));
+  gap: 20px;  
+  justify-content: center; 
+  align-content: center;
+}
+
+.taco{
+  transition: .5s ease transform;  
+  background-color: #325FEE;
+
+}
+.taco:hover{
+  transform: scale(.9);
+}
+
+
+.taco__image{
+  width: 100%;
+  object-fit: cover;  
+  height: 300px;
+}

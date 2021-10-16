@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Parametros REST y operador Spread</title>        
+</head>
+<body>  
+    <h1>Parametros REST y operador Spread</h1>
+    <script>         
+        /*Parametros REST---- Los parametros REST son recibir parametros infinitos o la cantidad que queramos en una funcion o metodo
+        puede ser 1 o mas de 1 
+        se tiene que poner antes del parametro 3 puntos*/    
+        const sumar = function(a,b,...c){
+            let resultado = a+b;
+            /*Estoy recorriendo el arreglo y todos los elementos que tenga el arreglo se los sumo con el resultado */
+            c.forEach(function(elemento){
+                resultado += elemento;
+            })  
+
+            return resultado;          
+        }
+        console.log(sumar(1,2,2,2,3));
+
+        /*Operador Spread---- CON ARREGLOS y variables que se pueden iterar
+            Un elemento iterable expande sus elementos , El operador de propagación spread 
+            operator permite que una expresión sea expandida en situaciones donde se esperan múltiples argumentos   */    
+
+        let iterable = "holaa"
+        const arreglo1=[1,2,3,4,5];
+        const arreglo2=[6,7,8,9,10];
+
+        const arreglo3 = [...arreglo1,...iterable ,arreglo2];        
+        console.log(arreglo3);
+
+        /* Operador Spread---- con Objetos
+        Hace una copia del antiguo objeto metiendo las propiedades del antiguo
+        objeto al nuevo objeto , pero ahora puedo editar el nuevo objeto sin modificar el antiguo  */
+
+        
+
+        
+        /* Diferencia entre REST y Spread
+        El operador Rest es exactamente 
+        igual a la sintaxis del operador de propagación, 
+        y se utiliza para desestructurar arrays y objetos.
+         En cierto modo, Rest es lo contrario de spread. Spread 'expande' un array en sus elementos,
+          y Rest recoge múltiples elementos y los 'condensa' en uno solo. */
+    </script>
+    
+</body>
+</html>

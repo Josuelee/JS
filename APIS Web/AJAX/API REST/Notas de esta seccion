@@ -1,0 +1,13 @@
+-Clase 111 fue la introduccion a las API REST , y la informacion esta en https://jonmircha.com/api-rest
+-Clase 112 fue descargar una api falsa de placeholder , instalamos node js e insomnia , usamos estos comandos:
+  json-server --watch -p jsonAConsumir (en este caso fue db.json) 
+  y eso me creaba una appi falsa
+-Clase 113 el profe enseña usar insomnia y con insomnia hacer pruebas de un CRUD
+-Clase 114 miramos la estructura html para en las siguientes clases hacer un CRUD
+-Clase 115 y 116 CRUD Con XMLHttpRequest que es mi archivo CRUD__AJAX.html
+-Clase 117 y 118 CRUD con Fetch que es mi achivo CRUD __FETCH.html
+-Clase 119 y 120 CRUD con Axios que es mi achivo CRUD __AXIOS.html
+
+
+color antiguo de los methodos d68d5b
+color antiguo propertys 8d6e63

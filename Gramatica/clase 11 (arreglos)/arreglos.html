@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Array/Arreglos</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+  <body>
+    <h1>Arreglos</h1>
+    <script>
+      const arreglo = ["id", "nombre", "apellido", "telefono"];
+      const arreglo2 = [true, 29, [1, "moped", ["saul", "pedro"]]];
+      const metodoOf = Array.of("primera", "segunda", "tercera",["otro arreglo","aca toy"]);       
+      const metodoFill = Array(20).fill("f");
+      const metodoPush = ["banana", "manzana", "melon"];
+      const metodoPop = ["banana", "manzana", "melon"];
+      const metodoForEach = ["rojo", "amarillo" ,"verde" ,"naranja"]
+      
+      console.log(arreglo);
+      console.log(`Tiene un ID de ${arreglo[0]}
+        su nombre es ${arreglo[1]}    
+        su telefono es ${arreglo[3]}
+        su apellido es ${arreglo[2]}`);
+
+      console.log(`----Ejemplo de arreglos dentro de otro----`);
+      console.log(arreglo2);
+      console.log(arreglo2[1]);
+      console.log(arreglo2[2][0]);
+      console.log(arreglo2[2][2][1]);
+
+      console.log(`----Ejemplo de metodo .of----`);
+      console.log(metodoOf);
+      console.log(metodoOf[1]);
+      console.log(metodoOf[3][1]);
+
+      console.log(`----Ejemplo de metodo .fill----`);
+      console.log(metodoFill);
+
+      console.log(`----Ejemplo de metodo .push----`);
+      metodoPush.push("sandia", "Pera");
+      console.log(metodoPush);
+
+      console.log(`----Ejemplo de metodo .pop----`);
+      metodoPop.pop();
+      console.log(metodoPop);
+
+      console.log(`----Ejemplo de metodo .forEach----`);
+      metodoForEach.forEach(function(elemento,index){
+        console.log(`numero de casilla ${index} = Colores: ${elemento} ` )
+      })
+      
+      
+      const prueba = Array(100).fill(1);
+      console.log(prueba)
+      const prueba2= Array.of("que" , "quieres");
+      console.log(prueba2);
+      const prueba3 = ["todo" , "lo que" , "quieres"];
+      prueba3.push("Es " , 1);
+      console.log(prueba3)
+      prueba3.pop();
+      console.log(prueba3);
+
+      const frutas = ["manzana","pera","sandia"]
+      frutas.forEach(function(el,i){        
+        console.log(`los elementos de tu arreglo son ${el} y la casilla ${i}`)
+      })
+
+      
+    </script>
+  </body>
+</html>

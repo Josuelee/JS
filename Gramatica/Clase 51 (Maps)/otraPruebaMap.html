@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>PruebaMap</title>    
+</head>
+<body>
+    <script>
+        const map = new Map(
+            [["Nombre","Josue"], ["Apellido","Lee"]]
+        );
+        map.set("edad" , 17)
+        map.set("telefono" , 439458)
+        console.log(map)
+        map.delete("Nombre")
+        console.log(map)
+        map.delete("Apellido")
+        console.log(map)
+        console.log(map.get("edad"))
+        console.log(map.has("telefono"))
+        console.log(map.has("Telefono"))
+    </script>
+</body>
+</html>

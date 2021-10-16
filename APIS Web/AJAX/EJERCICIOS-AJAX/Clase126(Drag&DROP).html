@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Drag &  Drop</title>
+  <style>
+    body{
+      height: 100vh;
+      display: grid;
+      place-items: center;
+    }
+
+    .drop-zone{
+      display: inherit;
+      place-items: inherit;
+      border: 1px solid #aaa;
+      height: 500px;
+      width: 500px;      
+    }
+
+    .drop-zone.drop-zone--active{
+      background-color: rgba(148, 49, 38, .9);
+      
+      animation: drop 1s infinite ;
+      animation-timing-function: linear;
+      border: black dashed 5px;
+    }
+
+    @keyframes drop {
+      0%{
+        transform: scale(1);
+      }
+
+      50%{
+        transform: scale(1.1);
+      }
+    }
+
+    
+  </style>
+</head>
+<body>
+  <article class="drop-zone " id="drop">
+    <h2>DRAG YOUR FILE HERE...</h2>
+      
+  </article>
+  <script src="js/Clase126(Drag&Drop).js"></script>
+</body>
+</html>

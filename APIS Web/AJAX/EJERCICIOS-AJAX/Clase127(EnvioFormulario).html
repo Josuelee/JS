@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Envio de formulario </title>
+  <link rel="stylesheet" href="css/form.css">
+</head>
+<body>
+  <h1>Envio de formulario</h1>
+  <form class="form" id="form">
+      <h2>Envianos tus comentarios</h2>
+      <div class="form__container form__container--name" id="name">
+        <input type="text" placeholder="Escribe tu nombre" pattern="^[A-Za-z\s]+$" required name="name" class="form__input form__input--name" title="Tienes que escribir un nombre correcto" >
+      </div>      
+
+      <div class="form__container form__container--email" id="email">
+      <input type="email" placeholder="Escribe tu email" pattern = "[A-Za-z0-9]+(\.[A-Z_a-z0-9]+)*@[A-Za-z0-9-]+(\.[A-Za-z0-9-]+)*(\.[A-Za-z]{2,15})" requiered name="email" class="form__input" required id="email">      
+      </div>
+
+      <input type="text" placeholder="Asunto a tratar" required name="subject" class="form__input">        
+
+      <div class="form__container form__container--textArea " id="textArea">
+        <textarea name="textArea" cols="30" rows="10" class="form__textArea" data-pattern = "^.{1,255}$" required title="No puedes pasar los 255 caracteres" placeholder="Comentario" ></textarea>              
+      </div>      
+
+      <input type="submit" class="form__button" > 
+      
+      <img src="assets/img/oval.svg" alt="" class = "form__loader"id="loader"><br>
+      <p class="form__response"  id="res-text">Los datos se han enviado correctamente</p>
+
+  </form>
+
+  <script src="js/Clase127(EnvioFormulario).js"></script>
+</body>
+</html>

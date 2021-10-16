@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Call , Apply , Bind</title>    
+</head>
+<body>
+    <script>
+        /*(Apply,Call):Permite escoger el contexto donde se ejecutara */
+        /*Bind: Permite enlazar dos contextos para poder utilizar sus datos*/
+        /* Call y apply realizan lo mismo lo que cambia es la forma en la que reciben parametros */
+
+
+        this.nombre = "Peter Global"
+
+        function saludar (deQuien,lugar){
+            console.log(`De ${deQuien} para ${this.nombre} en ${lugar}`)
+        }
+
+        saludar("moped" , "global");
+
+        const obj1 = {
+            nombre: "peter local",
+            apellido : "lee",            
+        }       
+
+        /* Los parametros se reciben con comillas y comas */
+        saludar.call(obj1 , "Fredy" , "local call");
+        /* Los parametros se reciben con arreglo */
+        saludar.apply(obj1 , ["pampon" , "local apply"]);
+
+        const persona = {
+            nombre: "josue",
+            saludar            
+        }
+
+        const persona2 = {
+            saludo : persona.saludar.bind(persona)
+        }
+
+        persona2.saludo("hi", "lee")
+        
+        
+        
+
+        
+    </script>
+</body>
+</html>

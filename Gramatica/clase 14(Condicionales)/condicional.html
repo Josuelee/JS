@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      Condicionales
+    </title>
+    
+  </head>
+  <body>
+      <h1></h1>
+    <script>
+        let nombre="josue";
+        let apellido = "lee";        
+        
+        //Estructura: (condicion)?verdadero:falso
+        let operadorTernario= ((nombre==="josue") &&(apellido==="lee"))       
+        ? "Su nombre es josue lee"
+        :"No se llama josue lee"
+        console.log(operadorTernario)
+
+        /* switch */
+        let colores= "azul";
+        switch(colores){            
+            case "rojo":
+            console.log("el color es rojo")
+            break;
+
+            case "azul":
+            console.log("el color es azul")
+            break;
+
+            case "verde":
+            console.log("El color es verde");
+            break
+
+            default:
+            console.log("no ha cumplido con ninguno de los casos")
+            break;
+        }
+
+        let edad = "1000";        
+        function edades(){//Funcion del operador ternario
+        ((edad>17)&&(edad<30))
+        ?console.log("es un joven")
+        :console.log("no es un joven");
+
+        ((edad>30)&&(edad<51))        
+        ?console.log("es un adulto")
+        :console.log("no es un adulto");
+            
+        ((edad>50)&&(edad<101))
+        ?console.log("Es un anciano")
+        :console.log("No es un anciano");
+        }
+        
+        edades();        
+    </script>
+  </body>
+</html>

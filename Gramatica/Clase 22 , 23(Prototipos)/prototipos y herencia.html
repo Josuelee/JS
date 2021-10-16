@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Prototipos y Herencia prototipica</title>    
+</head>
+<body>
+    <!-- La programacion POO en JS es basada en prototipos no en clases -->
+    <!-- Desde 2015 ahora ya no es necesario crear prototipos ya que cuando hacemos clases , JS lo compila a un prototipo
+    automaticamente pero es importante entender el concepto -->
+    <!-- Clase es el modelo a seguir o lo que pasaremos a otro objeto -->
+    <!-- Instancia su definicion es que es un objeto-->
+    <!-- Un objeto se divide en atributos y metodos-->
+
+    <!--Prototipo ---- es un mecanimo por el cual un objeto puede heredar de otro objeto
+        atributos y metodos-->
+        <h1>Prototipos y Herencia prototipica</h1>
+        <script>
+            /* Se realiza una funcion constructora para crear un prototypo , en este caso el prototipo llamado Personajes */
+            /* La funcion constructora se crea de forma declarada y su Nombre todas las iniciales en mayuscula .
+            Recibe los parametros que tendran el valor que se le dara a las instancias que se crearan*/                        
+            function Personajes(nombre,habilidad, categoria){
+                this.nombre = nombre;
+                this.habilidad = habilidad;
+                this.categoria = categoria;
+                
+                /* Se le pone this , porque se refiere a el constructor donde estan ubicados,
+                los parametros se estan utilizando despues de el signo igual , entonces
+                los que van en el this ejemplo this.nombre pueden llevar cualquier nombre ya
+                que son propiedades de la funcion constructora */
+            }
+            
+            /* Acabo de crear mi objeto de tipo Personajes que viene del prototipo Personajes y puedo crear los que desee siempre y cuando lleven estas 3 datos
+            que estan en los parametros */
+            const personaje1 = new Personajes("InsTructor" , "Saltar alto" , "A");                        
+            const personaje2 = new Personajes("Moped", "Pegar Fuerte" , "C");
+            console.log(personaje1);
+            console.log(personaje2);
+
+            /* No es buena practica crear metodos dentro de las funciones constructoras
+            sino que se le agregan al prototipo desde afuera haciendo que lo podamos usar en las instancias que creemos
+            ahorrando memoria ram de esta forma
+            */
+
+            /* Estructura : 1-Nombre funcion constructora . 2-prototype . 3-nombre del metodo*/
+            Personajes.prototype.sonar= function() {
+                console.log(`AHHH del personaje ${this.nombre}`);
+            }
+            personaje1.sonar();
+            personaje2.sonar();
+
+            /* ejemplo2 */
+
+            function instrumentos(nombre,tipo,precio,comprador){
+                this.nombre = nombre;
+                this.tipo = tipo;
+                this.precio = precio;
+                this.comprador = comprador;                
+            }
+
+            const instrumento1 = new instrumentos("Guitarra Fender " , "Electrica" , 101, "JosueLee");
+
+            if(instrumento1.precio > 100){
+                instrumentos.prototype.sonido = function(){
+                console.log(`Su guitarra ${this.nombre} hace un excelente sonido`);
+                }
+            }else{
+                instrumentos.prototype.sonido = function(){
+                console.log(`Su guitarra ${this.nombre} hace un mal sonido `);
+            }
+
+            }
+            instrumento1.sonido();
+            console.log(instrumento1);
+                /* por si no te recordas , cuando vos le asignas un metodo a una funcion constructora
+                ahora que se lo asignaste podes usarlo en todos los objetos que crees desde esa funcion
+                constructora */
+            
+
+            /* Herencia prototipica */
+            /*Create otro prototipo y le hare su herencia para que lo entiendas  */
+            console.log("-----------Herencia-----------")
+            function animal(nombre,genero,edad){
+                this.nombre = nombre;
+                this.genero = genero;
+                this.edad = edad;
+            }            
+            
+            animal.prototype.jugar = function(){
+                console.log("Me gusta jugar mucho con mi dueno")
+            }
+            animal.prototype.sonido = function(){
+                console.log("WOOOOOOOOOOOOW");
+            }                        
+            
+            //Ahora si viene la herencia  , creare un prototipo perro , que herede las cualidades de animal
+
+            function perro (nombre,genero,edad,tamanio){
+                this.super = animal;//creo una variable en este caso la llame super que tenga el valor de el prototipo animal
+                this.super(nombre,genero,edad); //Aqui abajo mando a llamar los datos que hay en el prototipo de animal
+                this.tamanio = tamanio;
+            }
+
+            perro.prototype = new animal();//Aqui ya genere la herencia  , ya que al prototipo perro le estoy dando el valor del prototipo animal
+            perro.prototype.constructor = perro;             
+            /* Creo un metodo constructor en el prototipo perro que dandole el valor de `perro` ,
+            ahora este constructor tiene los valores de animal porque dentro de perro esta el prototipo animal */
+
+            perro.prototype.sonido = function(){
+                console.log("Soy el nuevo sonido de perro , GUAAU GUAU");
+            } 
+            perro.prototype.nuevoMetodo = function(){
+                console.log("Soy el nuevo metodo de perro");
+            }    
+            const dalmata = new perro("Kimba", "Macho" , "12decadas", "Grande");
+            const bulldog = new perro("Buldgo" , "Hembra" , "5 siglos" , "mediano");
+            const leon = new animal("Kimba", "Macho" , "12decadas", "Grande");
+            const gato = new animal("gaticat" , "hembra", "1lustro");
+
+            console.log(leon);
+            console.log(gato);
+            console.log(dalmata);
+            console.log(bulldog);
+
+            leon.sonido()
+            gato.sonido();
+            bulldog.nuevoMetodo();
+            dalmata.sonido();
+            
+
+            
+
+            
+        </script>
+</body>
+</html>

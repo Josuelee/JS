@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>iterables e iterator</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>    
+</head>
+<body>
+    <!--  Iterables & Iterators  -->
+    <!-- Los elementos iterables son todos aquellos los cuales se puedan recorrer como un string , array , set , 
+        map , etc , por ejemplo los numeros no son iterables porque no se pueden recorrer -->
+    <!-- El iterador es el mecanismo que recorre los elementos iterables -->         
+    
+    <!-- los iteradores tienen un metodo llamado next , con ese metodo , se puede recorrer uno por uno cualquier elemento iterable -->
+    <script>
+        const array = new Map([["nombre" , "peter"] , ["mundo", "tierra"]])
+        let string = "hola mundo"
+
+        /* Acceder al iterador del iterable */
+        const iteratorArray = array[Symbol.iterator]()
+        const iteratorString = string[Symbol.iterator]()
+
+        console.log(iteratorArray)        
+        console.log(iteratorString)
+
+        let nextArray = iteratorArray.next()
+        let nextString = iteratorString.next()
+        
+        while(!nextArray.done){
+            console.log(nextArray);
+            nextArray = iteratorArray.next()
+        }
+
+        while(!nextString.done){
+            console.log(nextString)
+            nextString = iteratorString.next()
+        }
+
+        
+
+
+
+    </script>
+</body>
+</html>

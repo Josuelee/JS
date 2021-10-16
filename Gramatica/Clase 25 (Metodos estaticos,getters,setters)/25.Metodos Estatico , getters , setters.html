@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Metodo estatico , getters , setters</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+  <body>
+    <script>
+      /* 1-Estatico = lo que hace es poder usar el metodo fuera de la clase sin necesidad de crear un objeto */
+      /* Un metodo estatico se puede ejecutar sin necesidad de instanciar una clase */
+
+      class Clase1 {
+        static SoyUnMetodoStatic() {
+          console.log("Soy un metodo estatico");
+        }
+      }
+      Clase1.SoyUnMetodoStatic();
+
+      /*Los setters y getters son metodos especiales que nos permiten establecer y obtener los valores de atributos de nuestra clase*/
+      /*En otras palabras darle un valor a un atributo de una clase y de ese atributo obtener su valor*/
+      /* Son metodos internamente pero en la sintaxis JS los reconoce como propiedades */
+
+      class Clase2 {
+          constructor(nombre,apellido){
+            this.nombre = nombre;
+            this.apellido = apellido;
+            this.edad = null;//Estoy creando una propiedad/variable sin valor
+          }
+
+          get getEdad(){
+            return this.edad;//Se pone return porque cuando obtengamos el metodo , tendra el valor de la variable
+          }        
+
+          set setEdad(edad){//Puede ser cualquier nombre de parametro , es una simple variable que tendra el valor que le daremos a la propiedad
+            this.edad = edad;
+          }
+      }
+
+      const ejemplo = new Clase2("Josue", "Lee");
+      console.log(ejemplo)
+      console.log(ejemplo.getEdad)
+      ejemplo.setEdad = "18"
+      console.log(ejemplo.getEdad)
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
+
+
+    </script>
+  </body>
+
+  <li><a href="">Hoja1</a></li>
+  
+    <ul>
+      <li><a href="">Hoja2</a></li>
+      <li><a href="">Hoja3</a></li>
+      <li><a href="">Hoja4</a></li>
+      <li><a href="">Hoja5</a></li>
+      <li><a href="">Hoja6</a></li>
+      <li><a href="">Hoja7</a></li>
+      <li><a href="">Hoja8</a></li>
+      <li><a href="">Hoja9</a></li>
+      <li><a href="">Hoja10</a></li>
+      <li><a href="">Hoja11</a></li>
+      <li><a href="">Hoja12</a></li>
+      <li><a href="">Hoja13</a></li>
+      <li><a href="">Hoja14</a></li>
+      <li><a href="">Hoja15</a></li>
+      <li><a href="">Hoja16</a></li>
+      <li><a href="">Hoja17</a></li>
+      <li><a href="">Hoja18</a></li>
+      <li><a href="">Hoja19</a></li>
+      <li><a href="">Hoja20</a></li>
+      <li><a href="">Hoja21</a></li>
+      <li><a href="">Hoja22</a></li>
+      <li><a href="">Hoja23</a></li>
+      <li><a href="">Hoja24</a></li>
+      <li><a href="">Hoja25</a></li>
+      <li><a href="">Hoja28</a></li>
+      <li><a href="">Hoja26</a></li>
+      <li><a href="">Hoja27</a></li>
+    </ul>
+  </ul>
+</html>

@@ -1,0 +1,197 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap");
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+:root {
+  --background: #052e55;
+  --main-font: "Roboto", sans-serif;
+  --main-color: #d6d6ea;
+  --second-color: #2ab569;
+  --third--color: #2ebbe1;
+  --fourth--color: #e12e2e;
+  --withHover: 5px 10px 5px 0px rgba(0, 0, 0, 0.5);
+  --withoutHover: 2px 5px 3px 0px rgba(0, 0, 0, 0.5);
+  --font-color: #222;
+  --font-color-second: rgba(55, 55, 55, 0.8);
+}
+
+html {
+  box-sizing: inherit;
+}
+
+main {
+  margin: 0 auto;
+  width: 80%;
+  min-height: 100vh;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--background);
+}
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.loader {
+  margin: 0 auto;
+  width: 100px;
+}
+.form {
+  border-radius: 20px;
+  background-color: var(--main-color);
+  margin: 5rem auto 5rem;
+  width: 50%;
+  height: 25vh;
+  text-align: center;
+  box-shadow: 2px 2px 5px var(--fourth--color), -2px -2px 5px var(--fourth--color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.form__title,
+.search-sing__title {
+  color: var(--background);
+  font-family: sans-serif;
+  margin: 0;
+}
+
+@media screen and (max-width: 880px) {
+  .form__title {
+    font-size: 1.5rem;
+  }
+}
+@media screen and (max-width: 658px) {
+  .form {
+    width: 70%;
+  }
+  .form__title {
+    font-size: 1.3rem;
+  }
+}
+
+.form__input {
+  padding: 1.2rem;
+  border-radius: 8px;
+  border-style: none;
+  outline: none;
+  box-shadow: 1px 1px 1px var(--background) inset,
+    -2px -2px 2px var(--background) inset;
+  background-color: var(--main-color);
+  font-size: 1rem;
+  color: var(--background);
+  width: 80%;
+}
+
+.form__button {
+  border: none;
+  outline: none;
+  box-shadow: var(--withoutHover);
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 0.4rem;
+  font-family: var(--main-font);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: 0.5s ease background-color, 0.5s ease color;
+  margin: 0;
+}
+
+.form__button:hover {
+  background-color: var(--fourth--color);
+  color: #fff;
+}
+.form__button:active {
+  transform: scale(0.9);
+}
+
+.search-sing {
+  margin-bottom: 5rem;
+}
+.search-sing__title,
+.singer__title {
+  text-align: center;
+  color: var(--main-color);
+}
+
+/* SINGER */
+.singer {
+  display: grid;
+  grid-template-columns: 60% 40%;
+  box-shadow: 1px 1px 1px var(--main-color) inset,
+    -2px -2px 2px var(--main-color) inset;
+  max-width: 80%;
+  margin: 0 auto;
+  border-radius: 1rem;
+  background-color: var(--main-color);
+}
+@media screen and (max-width: 800px) {
+  .singer {
+    grid-template-columns: 100%;
+  }
+}
+.singer__title {
+  font-size: 2rem;
+  color: var(--background);
+}
+
+.singer__figure,
+.singer__information {
+  margin: 1rem 1.5rem;
+}
+
+.singer__figure {
+  background-color: var(--background);
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.singer__name,
+.singer__notFound {
+  font-family: var(--main-font);
+  color: var(--main-color);
+  font-size: 2rem;
+  text-align: center;
+}
+@media screen and (max-width: 800px) {
+  .singer__name{
+    font-size: 1.2rem;
+  }
+}
+.singer__information,
+.singer__lyrics {
+  font-size: 1.2rem;
+  color: #222;
+  
+}
+
+.singer__sing {
+  max-width: 100%;
+}
+
+.singer__lyrics {
+  max-width: 100%;
+  margin: 0 auto;
+  text-align: justify;
+  font-size: 1.5rem;
+  color: #222;
+  margin-right: 1.5rem  ;
+}
+
+@media screen and (max-width: 800px){
+  .singer__lyrics{
+    margin-left: 1.5rem;    
+  }
+}
+
+.singer__notFound{
+  text-align: left;
+} 

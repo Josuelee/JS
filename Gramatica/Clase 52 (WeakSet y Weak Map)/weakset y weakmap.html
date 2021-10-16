@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>WeakSet y WeakMap</title>    
+</head>
+<body>
+    <!-- Similar a los sets y maps , pero , estos solo aceptan propiedades debiles , osea objetos -->
+    <!-- No se puede ver el tamaño con size , no se puede usar clear , 
+            ni son iterables por ende no se puede recorrer sus valores -->
+    <!-- Cuando reciben un valor nulo , eliminan esa propiedad , como si fuera basura -->
+    <!-- No se puede ingresar directamente desde el constructor ,
+             se tiene que ingresar con el set y el add respectivamente -->
+    <!-- Se tienen que haber declarado en una variable con anterioridad -->
+    <script>
+        /* WeakSetm  */
+       const ws = new WeakSet();       
+       let valor1 = {nombre: "peter"}       
+       let valor2 = {apellido: "lee"}
+       let valor3 = {null : null}
+       let valor4 = {undefined : undefined}
+
+       ws.add(valor1) 
+       ws.add(valor2)
+       ws.add(valor3)
+       ws.add(valor4)
+       console.log(ws)
+
+       ws.delete(valor4)
+       console.log(ws)
+
+       console.log(ws.has(valor3))
+       console.log(ws.has(valor4))
+
+        /* lo asigne a nulo y se borro */
+       //setInterval(()=> {console.log(ws)} , 1000);
+       setTimeout(()=>{
+        valor1 = null;
+        valor2 = null;
+        valor3 = null;
+       } , 4000);
+
+       /* WeakMap  , las llaves vacias porque luego con el set le asignamos el valor*/
+       let value1 = {}       
+       let value2 = {}
+       let value3 = {}
+       let value4 = {}
+       let value5 = {}
+
+        const wm = new WeakMap();
+        wm.set(value1 , 1);
+        wm.set(value2 , 2);
+        wm.set(value3 , 3);
+        wm.set(value4 , 4);
+        wm.set(value5 , 5);
+
+        console.log(wm)
+
+        wm.delete(value4)
+
+        console.log(wm)
+        console.log(wm.has(value3))
+        console.log(wm.has(value4))
+
+       // setInterval(()=>{console.log(wm)},1000);
+        setTimeout(()=>{
+            value5 = null;
+            value1 = null;
+            value2 = null;
+            value3 = null;
+        } ,500);
+
+
+    </script>
+</body>
+</html>

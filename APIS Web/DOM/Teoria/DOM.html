@@ -1,0 +1,207 @@
+<!DOCTYPE html><html>
+    <head>
+        <title>DOM</title>        
+        <style>
+            :root{
+                --colorJS: #f2df2a;
+                --colorFondo: #222;
+                   
+            }
+            .images{
+                padding: 1em;
+                border: thin solid;
+                background-color: #eee;
+            }
+            .image {
+                display:inline-block;        
+                background-color: var(--colorFondo);
+                color: var(--colorJS);       
+            }
+
+            .image figcaption{                                
+                padding: .7em;
+            }
+
+            .rotate--45{
+                transform: rotate(45deg);
+            }
+
+            .rotate--135{
+                transform: rotate(135deg);
+            }
+            
+            .opacity{
+                opacity: 0.5;
+            }
+
+            .sepia{
+                filter: sepia(0.5);
+            }
+
+            .uno{
+                width:500px;
+                height: 350px;
+                background-color: aquamarine;                
+            }
+
+            .dos{
+                margin-top: 30px;
+                width:400px;
+                height: 250px;
+                background-color: aqua;  
+                              
+            }
+
+            .tres{
+                width: 300px;
+                height: 100px;
+                background-color: cornsilk;
+                margin-top: 50px;
+            }
+
+            .uno,
+            .dos,
+            .tres{
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .link{
+                text-align: center;
+                list-style: none;
+                color: brown;
+                font-size: 20px;
+            }
+            /* .hacerlado
+            {
+                margin-left: 1500px;
+            } */
+        </style>
+    </head>
+    <body>
+        
+            <h1>Webs APIS</h1>
+        <h2>Introduccion a la api del DOM</h2>
+            <p>Document object Model</p> 
+            <p>Permite interactuar con  HTML</p>
+        <h2>BOM</h2>
+            <p>Browser object model </p>
+            <p>Permite interactuar con el navegador,ventanas,etc</p> 
+        <h2>CSSOM</h2>
+            <p>Css object Model </p>
+            <p>Permite interactuar con el CSS , ventanas , etc </p>            
+        <hr/>
+
+        <h3>Manejo del Dom</h1>
+          
+        <p id="que-es">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat, distinctio natus? Consectetur reprehenderit maxime 
+            ullam quas ratione saepe quam animi ipsa reiciendis. Reprehenderit, quia porro cumque temporibus saepe rerum excepturi?
+        <p id="que-es2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat, distinctio natus? Consectetur reprehenderit maxime 
+            ullam quas ratione saepe quam animi ipsa reiciendis. Reprehenderit, quia porro cumque temporibus saepe rerum excepturi?
+        <p id="que-es3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat, distinctio natus? Consectetur reprehenderit maxime 
+            ullam quas ratione saepe quam animi ipsa reiciendis. Reprehenderit, quia porro cumque temporibus saepe rerum excepturi?
+        </p>
+        <nav id="menu">
+            <ul>
+                <li class="list-dom" ><a href="#">Section 1</a></li>
+                <li class="list-dom"><a href="#">Section 2</a></li>
+                <li class="list-dom"><a href="#">Section 3</a></li>
+                <li class="list-dom"><a href="#">Section 4</a></li>
+                <li class="list-dom"><a href="#">Section 5</a></li>
+            </ul>
+        </nav>
+        <input type="text" name="nombre" placeholder="Nombre" class="input">        
+        <a href="DOM.html" class="link-dom" data-description="Document Object Model" style="color: #F7D71E; background-color: #222;">Dom</a>                
+    <section class="images">
+            <figure  class="image">
+                 <img src="https://placeimg.com/300/300/tech" alt="Tech">
+                 <figcaption>Tecnologia</figcaption>
+             </figure>                
+            <figure class="image">
+                <img src="https://placeimg.com/300/300/animals" alt="animals">
+                <figcaption>animals</figcaption>
+            </figure>                
+            <figure class="image">
+                <img src="https://placeimg.com/300/300/people" alt="people">
+                <figcaption>People</figcaption>
+            </figure>        
+        
+            <figure class="image">
+                <img src="https://placeimg.com/300/300/arch" alt="arch">
+                <figcaption>Arch</figcaption>
+            </figure>                
+            <figure class="image">
+                <img src="https://placeimg.com/300/300/nature" alt="nature">
+                <figcaption>Nature</figcaption>
+            </figure>        
+    </section>
+    <template id="template-container">  
+        <figure class="image">
+            <img>
+            <figcaption></figcaption>
+        </figure>                        
+    </template>
+    <br><br>
+    <button onclick="eventoAtributo()">Evento de atributo</button>
+    <br><br>
+    <button id="manejadorSemantico">Evento de Manejador Semantico</button>
+    <br><br>
+    <button id="manejadorMultiple">Evento de Manejador Multiple</button>
+    <br><br>
+    <button id="eventoParametro">Evento recibiendo un parametro</button>
+    <br><br>
+    <button id="removeEvento">Removiendo un evento</button>
+    <button id="removeEvento2">Removiendo un evento2</button>
+
+    <br> 
+    <br>
+    <br>
+    <hr>
+    <div class="box-container">
+        <div class="uno">
+            1
+            <div class="dos">
+                2
+                <div class="tres">
+                    3
+                    <a href="https://youtube.com"  target="_blank" id="enlace">ir a enlace</a>   
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+    <div class="hacerlado">a</div>
+
+    <button id="btnAbrir">Abrir</button>
+    <button id="btnCerrar">Cerrar</button>
+    <button id="btnImprimir">Imprimir</button>
+    <br><br>
+    <button id="btnLocation">Location</button>
+    <button id="btnHistory">History</button>
+    <button id="btnNavigator">Navigator</button>
+
+
+    <!-- <script src="Clase 61(introduccion).js"></script> -->
+    <script src="Clase 62(nodos_elementos_selectores).js"></script>
+    <script src="Clase 63(Atributos_DataAttributes).js"></script>
+    <script src="Clase 64(Estilos y Variables CSS).js"></script>
+    <script src="Clase 65(Clases CSS).js"></script>
+    <script src="Clase 66(Texto y Html).js"></script>
+    <!-- <script src="Clase 67(Dom Traversing).js"></script>
+    <script src="Clase 68(Creando Elementos y Fragmentos).js"></script>
+    <script src="Clase 69(Template HTML).js"></script>
+    <script src="Clase 70(Modificando Elementos , formaAntigue).js"></script>
+    <script src="Clase 71(Modificando Elementos NuevaForma).js"></script>
+    <script src="Clase 72(Manejadores De Eventos).js"></script>
+    <script src="Clase 73(Eventos Con parametros y Remover Eventos).js"></script>
+    <script src="Clase 74(Flujo de eventos , burbuja y captura).js"></script>
+    <script src="Clase 75(Prevent Default y StopPropagations).js"></script>
+    <script src="Clase 76(Delegacion de eventos).js"></script>
+    <script src="Clase 77(BOM Propiedades y eventos).js"></script>
+    <script src="Clase 78(BOM , metodos).js"></script> -->
+    <script src="Clase 79(BOM , Objetos , URL, Historial , Navegacion).js"></script>
+</body>
+</html>
+
+

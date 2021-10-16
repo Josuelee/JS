@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Operadores</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+  <body>
+    <h1>Operadores</h1>
+    <script>
+      /* Operadores arimeticos */
+      let num1= 90 , num2=20, suma = num1-num2;
+      let num3 = 100
+      console.log(suma)
+      let promedio = ((num1+num2)/2);
+      console.log(promedio)
+      console.log(num1%num2)
+      /* Operadores relacionales */
+
+      if(num1>num2){
+        console.log(`${num1} es mayor que ${num2}`);
+      }
+      if (num1<num3) {
+        console.log(`el numero ${num2} es menor que ${num3}`);
+      }
+      if(7>=num2){
+        console.log(`7 si es mayor o igual que ${num2}`)
+      }else{
+        console.log(`7 no es mayor o igual que ${num2}`)
+      }
+      if(num3<=num2){
+        console.log(`${num3} es menor o igual que ${num2}`)
+      }else{
+        console.log(`${num3} es mayor o igual que ${num2}`)
+      }
+      console.log(7=="7")
+      console.log(7==="7")
+      console.log("amigo"=="amigo")
+
+      /* Operadores de incremento o decremento */
+      let a = 1;
+      let b = 2;
+      let c=3;
+      let d=5;
+      a+=2
+      console.log(a)
+      a++
+      console.log(a);
+      b+=3
+      console.log(b);
+      b=1;
+      console.log(b++);//aca primero lo imprime y luego lo suma , por eso sale que vale 1
+      console.log(++b);//luego de haberlo sumado lo vuelve a sumar por eso vale 3
+      c-=1
+      console.log(c)
+      d--;
+      console.log(d)
+      /* for(let a=20; a > 0 ; a--){ // hace que cuente de 20 para abajo
+        console.log(a);
+      } */
+
+      /*Operadores logicos
+       !,not : niega , lo verdadero lo vuelve falso y viceversa
+      &&,and
+      || ,or */
+      if((num1===num2) || (num2<num1)){
+        console.log('se ha cumplido la primera condicion')
+      }
+      if((num1===num2)&&(num2<num1)){
+        console.log('se ha cumplido la segunda condicion')
+      }
+      console.log(!true)
+      console.log(!false)
+      
+      tiempo = 0
+      if(tiempo>23){
+        console.log("Esta fuera de la zona horaria")
+      }else
+      if((tiempo>0)&&(tiempo<6)){
+        console.log(`dejame dormir`);
+      }else
+      if((tiempo>5)&&(tiempo<12)){
+        console.log("Buenos dias")
+      }else if ((tiempo>11)&&(tiempo<19)) {
+        console.log("Buenas tardes")
+      }else if((tiempo>18)&&(tiempo<24)){
+        console.log("Buenas noches")
+      }
+
+      //el == comprueba si son iguales sin importar el tipo de dato
+      // el === comprueba si son iguales viendo el tipo de dato , no se podria comparar esto "1" === 1
+    </script>
+  </body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Ejercicio 3</title>    
+</head>
+<body>
+    <script>
+        const 연습9 = () => console.log(Math.floor(Math.random() * 100 + 501));        
+        연습9();
+
+        const 연습10 = (number = undefined) =>{
+            if(!number) return console.warn("Tiene que ingresar un numero");            
+            if (number < 0) return console.warn("No puede ingresar un numero negativo");
+            if(typeof number !== "number") return console.error("Tiene que ingresar un numero NO una cadena de texto");
+            number = number.toString();
+            let alReves = number.split("").reverse().join("");
+
+            (number === alReves) 
+                ? console.info(`Es un numero capicúa porque ${number} al reves se lee ${alReves}`)
+                : console.info(`No es un  numero capicúa porque ${number} al reves se lee ${alReves}`)
+        }
+        연습10(20002);
+
+        const 연습11 = (number = undefined) =>{
+            if(!number) return console.warn("Tiene que ingresar un numero");                       
+            if(typeof number !== "number") return console.warn(`"${number}" no es un numero`)
+            if(Math.sign(number) === -1) return console.warn("No puede ingresar un numero negativo");            
+            let suma=1;            
+            for(x = 1; x<=number; x++){
+                 suma *= x;
+            }
+            return console.log(suma);                        
+            
+        }
+        연습11("19");
+
+        
+                
+
+    </script>
+</body>
+</html>

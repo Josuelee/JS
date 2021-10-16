@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>JSON</title>    
+</head>
+<body>
+    <!-- JavaScript Object Notation o Notación de Objetos de JavaScript:
+            es un formato ligero de intercambio de datos. <- esa es la definicion , intercambio de datos para eso se usa
+            Leerlo y escribirlo es simple para humanos,
+            mientras que para las máquinas es fácil de interpretar y generar. 
+            Todos los lenguajes de programación lo soportan. -->
+    
+    <!-- Sintaxis derivada de los objetos JavaScript:
+            Los datos se encuentran en pares de nombre / valor.
+            Los datos están separados por comas.
+            Las llaves {} contienen objetos.
+            Los corchetes [] contienen arreglos.
+            Los datos tienen un nombre y un valor.
+            Los datos se escriben como pares de nombre / valor "nombre" : "valor". -->
+
+    <!--Valores JSON:
+            Un número (entero o de coma flotante).
+            Una cadena (entre comillas dobles).
+            Un booleano (verdadero o falso).
+            Un arreglo (entre corchetes).
+            Un objeto (entre llaves).
+            Un valor nulo (null). -->
+
+    <!-- La sintaxis json es entre comillas y simpre se inicia con llaves -->
+
+    <!-- Métodos JavaScript para JSON:
+            JSON.parse(): Analiza una notación JSON y la convierte en un tipo de dato JS. -->
+            <!-- JSON.stringify(): Convierte un tipo de dato JS a notación JSON. -->
+    <script>
+        console.info("De objetos JSON a objetos js")        
+        console.log(JSON.parse("{}"))
+        console.log(JSON.parse("[]"))
+        console.log(JSON.parse("null"))
+        console.log(JSON.parse("1"))
+        console.log(JSON.parse("true"))
+        console.info("")
+        console.info("De objetos JS a JSON")        
+        console.log(JSON.stringify({}))
+        console.log(JSON.stringify([]))
+        console.log(JSON.stringify(null))
+        console.log(JSON.stringify(9))
+        console.log(JSON.stringify(true))    
+    
+        
+    </script>    
+</body>
+</html>

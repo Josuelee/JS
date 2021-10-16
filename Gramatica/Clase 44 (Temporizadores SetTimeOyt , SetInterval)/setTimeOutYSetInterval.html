@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>setTimeOut & setInterval</title>    
+</head>
+<body>
+    <script>
+        console.info(`prueba`)
+        setTimeout(() => console.info(`pruebaTimeout`),500);
+        setInterval(()=> console.log(new Date().toLocaleDateString()),1500)
+        setInterval(() => console.log(new Date().toLocaleTimeString()), 2000);
+    </script>
+</body>
+</html>

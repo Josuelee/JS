@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Objeto Console</title>
+  </head>
+  <body>
+    <h1>Objeto Console</h1>
+    <script>
+    /* 1.log ,2.error, 3.info, 4.warn , 5.clear , 6.grupo , 7.dir , 8.assert , 9.count , 10.table , 11.time */
+    console.log("Hola sere un console que sera eliminado")
+    console.clear();
+
+    console.groupCollapsed("Tipos de mensaje en el console");
+      console.log(console);
+      console.error("Soy un mensaje de error");
+      console.info("Soy un mensaje informativo");
+      console.warn("Soy un mensaje de advertencia");
+      console.log("El log de usa para imprimir lo que hay en el codigo");      
+    console.groupEnd();
+
+
+    console.groupCollapsed("Mensaje para decir mi nombre")
+      let nombre = "Josue",
+        apellido = "Lee",
+        edad = 17;
+      /* %s significa que el valor sera un alfanumerico , y %d que sera un digito en este caso un numero */
+      console.log(`Mi nombre es %s %s y mi edad es %d`, nombre, apellido, edad);
+    console.groupEnd()
+
+    /* Dir se usa para a cualquier objeto mostrar sus cualidades y metodos etc */
+    /* document representa el DOM = document object model , que es los datos de html poder utilizarlos en JS */
+    console.dir(document)
+
+    console.groupCollapsed("Tablas")
+    const numeros = [1,2,3,4,5],
+     amigos = ["Jonathan", "Peter"],
+    가족은 = {
+        엄마: "실비아",
+        아빠: "이승권",
+        동생: "이근우"         
+    }
+
+    /* entries lo que hara es que al objeto que le demos sus datos los convertira en filas y columnas */
+    /* .sort() lo que hara es ordenarlos en orden alfabetico*/
+    console.table(Object.entries(console).sort())
+    console.table(numeros)
+    console.table(amigos)
+    console.table(가족은)
+    console.groupEnd();
+
+    /*Cuando quiero ver el tiempo que se tardo mi maquina en ejecutar un pedazo de codigo se hace asi: */
+
+    console.time("Cuanto tiempo tardara mi codigo - identificador");
+
+    const array = Array(1000);
+    for(let x =0; x<array.length; x++){
+        array[x] = x
+    }    
+    console.timeEnd("Cuanto tiempo tardara mi codigo - identificador");    
+
+    /* count muestra la cantidad de veces que se ha ejecutado el codigo */
+
+    console.groupCollapsed("Metodo count")
+        for(let x=0; x<10; x++){
+            console.count("Las veces que se ejecuta"); //Enviara un mensaje cada vez que se ejecute el codigo
+            console.log(x)
+        }
+    console.groupEnd();
+
+    console.groupCollapsed("Assert /Pruebas");
+    /* assert es para realizar pruebas */
+    let a =3;
+    let b =2;
+    let prueba = "A siempre tiene que ser menor a B"
+    console.assert(a<b , {a,b, prueba});
+    /* orden , 1.condicion , 2.las variables , 3.Mensaje */
+    console.groupEnd();
+    </script>
+  </body>
+</html>

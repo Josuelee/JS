@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Operador Cortocircuito</title>
+  </head>
+  <body>
+    <h1>Operador Cortocircuito</h1>
+    <script>
+      /* Se utilizan el operador AND u OR */
+
+      /* 1.Cortocircuito OR: Cuando el valor de la izquierda en la expresion
+        se valide a true , es el valor que se cargara por defecto pero sino es true se cargara
+        el valor de la derecha */
+
+      /* 2.Cortocircuito AND: Cuando el valor de la izquierda en la expresion
+        se valide a false , es el valor que se cargara por defecto pero sino es false se cargara
+        el valor de la derecha */
+
+      /* OR */
+      console.groupCollapsed("OR");
+      let numero = 23 || "No es un valor positivo";
+      console.log(numero);
+      console.log(" " || "No es un valor que denote true");
+      console.log("Hola" || "No es un valor que denote true");
+      console.log(true || "No es un valor que denote true");
+      console.log({} || "No es un valor que denote true");
+      console.log([] || "No es un valor que denote true");
+      console.log(null || "No es un valor que denote true");
+      console.log("" || "No es un valor que denote true");
+      console.log(0 || "No es un valor que denote true");
+      console.log(undefined || "No es un valor que denote true");
+      console.log([] || "No es un valor que denote true");
+      console.groupEnd();
+
+      console.groupCollapsed("AND");
+      /* AND */
+      console.log(null && "No es un numero que denote false");
+      console.log(undefined && "No es un numero que denote false");
+      console.log(isNaN && "No es un numero que denote false");
+      console.log(0 && "No es un numero que denote false");
+      console.log(" " && "No es un numero que denote false");
+      console.log(1 && "No es un numero que denote false");
+      console.log("hola" && "No es un numero que denote false");
+      console.log([] && "No es un numero que denote false");
+      console.log({} && "No es un numero que denote false");
+      console.groupEnd();
+    </script>
+  </body>
+</html>

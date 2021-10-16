@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>ExpresionesRegulares</title>    
+</head>
+<body>
+    <h1>ExpresionesRegulares</h1>
+    <script>
+        /* Las expresiones regulares son patrones que se utilizan para hacer coincidir combinaciones de caracteres en cadenas.
+         En JavaScript, las expresiones regulares también son objetos. Estos patrones se utilizan con
+          los métodos exec() y test() de RegExp, y con match(), matchAll(), replace(), replaceAll(), search() y split() 
+          métodos de String.  */
+
+          /* En resumen es para buscar cadenas de texto con unos patrones */
+
+        let texto = `   9 3432Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam, saepe eius non illum omnis ratione 
+    nostrum mollitia provident vitae voluptas cumque error recusandae libero velit, minus vel, 
+    voluptatum accusantium iure! lorem`;
+
+    /* 2 formas de declarar con un una funcion constructora o con // */          
+    /* Las banderas son pequeñas modificaciones que se le pueden dar a la expresion regular , se agrega despues del 1 parametro */
+    
+    let ExpresionRegular = new RegExp("lorem" , "ig");
+    console.log(ExpresionRegular.exec(texto))//devuelve el texto
+    console.log(ExpresionRegular.test(texto))//devuelve true o false
+
+    let ExpresionRegular2 = /lorem{1,}/ig;
+    console.log(ExpresionRegular2.exec(texto))
+    console.log(ExpresionRegular2.test(texto))
+    </script>
+    
+</body>
+</html>

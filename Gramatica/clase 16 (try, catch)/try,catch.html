@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Try catch</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>    
+</head>
+<body>
+    <h1>Practica</h1>
+    <script>
+        try{
+            let numero = "a";            
+            if(isNaN(numero)){  /* isNan lo que hara es que , si es un String devolvera true , 
+        osea si entrara a la condicion pero si es un numero no entra en la condicion */
+            throw new Error("No es un numero");/*throw lanza una excepcion , osea , cuando hay un error 
+            regularmente se usa throw para enviar el error al catch y mostrar el error*/
+            }
+            console.log(numero);
+        }catch(error){
+            console.log(error);            
+            
+        }
+        
+    </script>
+</body>
+</html>

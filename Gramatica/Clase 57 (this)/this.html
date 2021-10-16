@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>This</title>    
+</head>
+<body>
+    <script>
+        /* This , denota el contexto donde estamos ubicados , pero hay algunas caracteristicas en JS */
+        
+        this.nombre = "Peter GLOBAL"
+
+        console.log(window)
+        console.log(this)
+        /* Ese this significa que es igual al objeto windows ya que es el objeto general de los navegadores "Este objetoGeneral "*/
+        console.log(this === window)        
+
+        /* Imprime el nombre del objeto global porque ahi en el objeto global fue creada la funcion */
+        function imprimir(){                        
+            console.log(this.nombre)            
+        }        
+        imprimir();
+
+        /* Imprime el nombre del objeto local (creado) porque ahi en ese objeto fue creada la funcion */
+        const obj1 = {
+            nombre: "peterLocal1",
+            imprimir(){
+                console.log(this.nombre)
+            }
+        }
+        obj1.imprimir();
+
+        /* El cuerpo de la funcion imprimir de la linea 20 se lo asigna a la linea 27 , pero en este caso como el this es en ese contexto
+            sigue imprimiendo el nombre que esta creado en el objeto2*/
+        const obj2 = {
+            nombre: "peterLocal2",   
+            imprimir
+        }
+        obj2.imprimir();
+
+        /* Imprimira el this del objeto global(window) porque cuando usas this con una arrow function
+             , no utiliza los datos del scope donde fue creada la arrow function, sino que ,
+                 utiliza los valores del objeto donde fue creado el otro objeto donde  se creo la funcion */
+        const obj3 = {
+            nombre: "peterLocal3",
+            imprimir : ()=>{
+                console.log(this.nombre)         
+            }
+        }
+        obj3.imprimir();
+
+        /* Aca esta imprimiendo el this porque el contexto de donde se creo la function normal es la function constructora */
+        function Animal (name) {
+            this.nombre = name;
+            return () =>{
+                console.log(this.nombre)
+            }
+        }
+        const perro = new Animal("Garfiel");
+        perro();
+
+        /* Imprime a peter Global porque , en la linea 68 yo asigne el valor de name a this.nombre  , pero al crear yo otra funcion
+            en la linea 69 , en esa nueva funcion , no existe la variable name porque es un nuevo bloque de codigo,
+             entonces por eso se regresa al contexto donde esta en este caso en el objeto windows y 
+                mira cual es el valor de this.nombre y en este caso el valor es peterGlobal*/
+                
+        function Animal2 (name) {
+            this.nombre = name;
+            return function(){
+                console.log(this.nombre)
+            }
+        }
+        const perro2 = new Animal2("Garfieleeeeees");
+        perro2();
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Alert , confirm , promt</title>        
+</head>
+<body>
+    <h1>Alert , confirm , promt</h1>
+    <script>
+        /* alert , confirm y prompt son metodos que vienen del objeto window del navegador */
+        /* 
+        Se pueden activar asi:
+        window.alert()
+        window.confirm()
+        window.prompt() 
+
+        Pero tambien puede ser sin el window:
+        alert()
+        confirm()
+        prompt()        
+        */        
+        /* alert("Tiene que hacer bien su codigo")
+        let Confirmacion = confirm("Desea ingresar un usuario?");//Devuelve true si le damos aceptar y si le damos cancelar devuelve false        
+        let ingresar = prompt();      
+        console.log(Confirmacion)
+        console.log(ingresar) */
+        alert("Lista de usuarios");        
+        let usuario;
+        if(confirm("Desea ingresar un usuario")){
+             usuario = prompt();            
+        }
+        let condicion = usuario || "No ingreso un usuario"
+        console.log(condicion);
+            </script>
+</body>
+</html>

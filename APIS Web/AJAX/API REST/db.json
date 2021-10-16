@@ -1,0 +1,43 @@
+{
+  "Series": [
+    {
+      "id": "1",
+      "descripcion:": "Descendientes del sol",
+      "precio": "120.00",
+      "categoria": "Favorita"
+    },
+    {
+      "id": "2",
+      "descripcion": "ItaewoonClass",
+      "precio": "150.00",
+      "categoria": "Normal"
+    }
+  ],
+  "Canciones": [
+    {
+      "id": "3",
+      "descripcion": "Stand",
+      "autor": "Hillsong"
+    },
+    {
+      "descripcion": "Soy Hijo de Dios",
+      "autor": "Julio Melgar",
+      "id": "4"
+    },
+    {
+      "id": "5",
+      "descripcion": "Yo Soy Quien Dices Que Soy",
+      "autor": "Hillsong Worship"
+    },
+    {
+      "descripcion": "dialogo intimo",
+      "autor": "Marcos Brunet",
+      "id": "nAR30cr"
+    },
+    {
+      "descripcion": "Dios ha sido bueno",
+      "autor": "emilia",
+      "id": "1P1M7z0"
+    }
+  ]
+}

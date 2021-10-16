@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>break y continue</title>
+  </head>
+  <body>
+    <script>
+      let comida = "";
+      switch (comida) {
+        case "lamion":
+          console.log("El lamion es rico");
+          break;
+
+        case "hamburguesa":
+          console.log("La hamburguesa es rica");
+          break;
+      }
+
+      const arreglo = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+       for (let x = 0; x < 10; x++) {
+        if (x % 2 === 0) {
+          //El numero se divide en 2 y el residuo es 0 por eso es par          
+          console.log(`Numeros pares: ${x}` );
+          
+        } 
+    }
+        for (let x = 0; x < 20; x++) {
+          if (x%3) {
+        //aca esta condicion hara que muestre todos los numeros que no sean de la tabla del 3            
+            continue; // y si pongo continue hara que deje de mostrar los numeros que no son 3 , por ende mostrar solo los de la tabla del 3                                                
+          }
+          console.log(x);
+        }
+          /* Cuando yo opero con el operador modulo , en el if , no mostrara los que den residuos 0 , en este caso 
+          todos los que se dividan con el numero que pones , ejemplo divides con 3 , todos los numeros dividiendo en 3
+          te van a dar 0 , esos no los mostrara */
+    </script>
+  </body>
+</html>

@@ -1,0 +1,43 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+     <meta charset='utf-8'>
+     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+     <title>Objeto Date</title>     
+ </head>
+ <body>
+    <h1>Objeto Date</h1>
+    <script>
+        let fecha = new Date();
+        /* Se va actualizando segun lo escribes , osea la hora es segun el momento que escribes el codigo */
+        console.log(Date())        
+        console.log(fecha)
+        /* dia del mes */
+        console.log(fecha.getDate() ,`obtener dia del mes`)
+        /* dia de la semana D L M MI J V S -> 0 1 2 3 4 5 6 */
+        console.log(fecha.getDay() ,`Obtener dias de la semana` )
+        /* Mes , Ene , Feb , Mar , Abr , May , Jun , Jul , Ago , Sep , Oct , Nov, Dic*/
+        /* 0 1 2 3 4 5 6 7 8 9 10 11 */
+        console.log(fecha.getMonth(), `Obtener meses`)
+
+        console.log(fecha.getFullYear()) //Obtiene el año en este caso 2020
+        console.log(fecha.getHours()) //Obtiene la hora
+        console.log(fecha.getMinutes())//Obtiene los minutos
+        console.log(fecha.getSeconds())//Obtiene segundos
+        console.log(fecha.getMilliseconds())//Obtiene mili segundos
+
+        console.log(fecha.toString())//Obtiene la fecha 
+        console.log(fecha.toLocaleString())//Obtiene la fecha con el tiempo pero en numeros ejemplo 2/11/2020 11:55:03
+        console.log(fecha.toLocaleDateString())//obtiene solo la fecha ejemplo 2/11/2020
+        console.log(fecha.toLocaleTimeString())//Obtiene solo el tiempo ejemplo 11:56:25 osea la hora es 11 minutos 56 , 25 segundos
+        console.log(fecha.getTimezoneOffset())//Uso horario en el que nos encontramos en minutos , osea de londres a guatemala el uso horario
+        /* Obtener los datos de la hora 0 , osea de londres*/
+        console.log(fecha.getUTCDate())
+        console.log(fecha.getUTCHours())
+        console.log(Date.now()) //Es la manera de representar cuantos segundos han pasado desde el 1 enero de 1970 (time stamp)
+
+        let cumple = new Date(2003, 3 , 28);
+        console.log(cumple)
+    </script>
+ </body>
+ </html>

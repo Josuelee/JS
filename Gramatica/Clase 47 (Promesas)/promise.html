@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Promesas</title>        
+</head>
+<body>
+    <!-- Una promesa es un objeto que dentro tiene 2 callbacks -->
+    <!-- Es similar a un callback pero , a la hora de anidar las promesas , es mucho mejor y mas comodo de leer-->
+    <!-- Evitando asi el callbackhell -->    
+    <!-- parametro resolve: cuando no hay error , reject: cuando hay error -->
+    <script>
+        /* Ejemplo Jon */
+        const elevarCuadrado = (valor) =>{
+            return promesa = new Promise ((resolve , reject)=>{ //Aca adentro van los 2 callbacks (osea 2 funciones)
+                if(typeof valor !== "number") return reject(`El valor: "${valor}" no es un numero`);
+                setTimeout(()=>{
+                    resolve(valor);
+                } , Math.random() * 1000);                
+            })
+        }   
+
+        const temporizador = (num) => {
+                return promesa = new Promise((resolve , reject)=>{
+                    if(typeof num !== "number") return reject(`Hubo un error en el temporizador`);
+                    setTimeout(()=>{
+                        resolve(num);
+                    }, 200);
+                })
+            }
+
+        /* Invoco la promesa y para acceder al valor sin errores es .then y para acceder al error es .catch */
+        /* El return del then le dara el valor al siguiente then , ejemplo , la linea 39 return 2 elevado al cuadrado entonces 
+        el valor de la linea 41 va a ser 2 elevado al cuadrado */
+        elevarCuadrado(0)
+            .then(res => {
+                console.info(`Inicio de la promesa`)
+                console.log(`${res} elevado al cuadrado: ${res*res}`)
+                return elevarCuadrado(2);
+            })
+            .then(res=>{
+                console.log(`${res} elevado al cuadrado: ${res*res}`)
+                return elevarCuadrado(3);
+            })
+            .then(res=> {
+                console.log(`${res} elevado al cuadrado: ${res*res}`)
+                return elevarCuadrado(4);
+            })
+            .then(res => temporizador(""))
+            .then(res => {
+                let temp = res+5
+                console.log(temp)
+                return temporizador(temp-10)
+            })            
+            .then(res =>{
+                console.log(res);
+            })
+            .catch(error=> console.error(error));
+
+
+            
+            
+
+            
+
+         
+            
+    </script>
+</body>
+</html>

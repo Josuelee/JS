@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Symbol</title>        
+</head>
+<body>
+    <h1>Symbol</h1>
+    <!-- Symbol es un tipo de dato nuevo desde ecmaScript 6 -->
+    <!-- tipo de dato primitivo-->
+    <!-- 2 caracteristicas: 
+            Se usa regularmente en los objetos para privatizar las propiedades de los mismos objetos
+            se puede usar como un identificador , es decir , su valor no puede repetirse ,  
+                ejemplo con un ID los ID nunca deben repetirse pues , un symbol es igual , no se puede repetir su valor-->
+                
+    <script>
+        /* lo que hay dentro de los parentesis no define su valor , simplemente es un identificador del symbolo , 
+            o etiqueta para que nos recordemos de que trata el symbolo */        
+        const nombre = Symbol("nombre");
+        const apellido = Symbol("apellido");
+
+        const amigo = {
+            /* se pone dentro de corchetes para denotar que es un simbolo */
+            [nombre]: "hola",
+            [apellido]: "hola",
+            pasatiempos : ["jugar","reir","comer","divertise"]
+        }
+        /* Como nombre y apellido estan en privado con un for in no se pueden ver*/
+        for(let property in amigo){
+            console.info(property)
+        }
+        /* la forma de llamar el valor es con corchetes: */
+        console.info(amigo[nombre]);
+        console.info(amigo[apellido]);
+        console.info(amigo.pasatiempos);
+        console.info(amigo[nombre] === amigo[apellido])
+
+
+
+    </script>
+</body>
+</html>

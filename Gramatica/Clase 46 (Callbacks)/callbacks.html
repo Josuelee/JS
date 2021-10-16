@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Callbacks</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>    
+</head>
+<body>
+    <!-- callback es una funcion que se ejecuta atraves de otra funcion -->
+    <!--Una función de callback es una función que se pasa a otra función como un argumento, 
+    que luego se invoca dentro de la función externa para completar algún tipo de rutina o acción.-->
+    <script>
+        /* Ejemplo Dorian */
+        console.groupCollapsed(`Ejemplo Dorian`)
+        const users =
+        [
+        {id: 1 ,nombre: "josue"},{id:2 , nombre: "peter"},{id:3 , nombre: "badim"}
+        ]
+
+        const emails = 
+        [{id: 1 , email: "josuelee428@gmail.com"} ,{id:2 , email: "peter123@gmail.com"}];
+
+        
+        getUsers =(id , callback)=>{    
+        //si el id del usuario es el mismo que el del parametro se le dara el valor a searchcUsers
+            const searchUsers = users.find(el=> el.id === id); 
+            if(!searchUsers) return callback(`No existe nadie con el ID ${id}`); //Si no hay nadie con ese id es porque no existe
+            else callback(null, searchUsers); 
+        }
+
+        getEmail = (user , callback) =>{
+            const searchUsers = emails.find(el=> el.id === user.id);
+            if(!searchUsers) return callback(`El usuario ${user.nombre} no tiene email`)//Este mensaje es el que mandamos por parametro al if de la linea 39
+            else callback(null, {id: user.id , nombre: user.nombre , email: searchUsers.email });
+        }
+        
+        getUsers(1,(error,users)=>{
+            if(error) return console.error(error); //aca recibimos el de la linea 34 , cuando ocurre un error 
+            getEmail(users , (error, total)=>{ //utilizamos la variable users que es el arreglo de usuarios para poder obtener el nombre , id y email
+                if(error) return console.error(error);
+                console.info(total);
+            })
+        }); 
+
+        console.groupEnd();
+
+        console.group(`Ejemplo JOnMircha`);            
+            const ElevarCuadrado = (value , callback) =>{
+                setTimeout(()=>{
+                    callback(value, value*value);                    
+                }, 500/* Math.random() * 1000 */);
+            }
+
+            ElevarCuadrado(1 , (value,result)=>{
+                console.log(`El cuadrado de ${value} es ${result}`)                                                
+                ElevarCuadrado(2 , (value,result)=>{
+                    console.log(`El cuadrado de ${value} es ${result}`)                
+                    ElevarCuadrado(3 , (value,result)=>{
+                        console.log(`El cuadrado de ${value} es ${result}`)                
+                        ElevarCuadrado(4 , (value,result)=>{
+                            console.log(`El cuadrado de ${value} es ${result}`)                
+                             ElevarCuadrado(5 , (value,result)=>{
+                                console.log(`El cuadrado de ${value} es ${result}`)                
+                            });
+                        });
+                    });
+                });
+            });
+            
+            
+            
+        console.groupEnd();
+
+
+        
+
+
+
+
+
+        
+    </script>
+</body>
+</html>

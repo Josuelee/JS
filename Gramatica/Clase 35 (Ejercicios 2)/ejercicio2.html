@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Ejercicios Practicos 2</title>
+  </head>
+  <body>
+    <h1>Ejercicio2</h1>    
+    <script>
+      /* ejercicio 5 , 6 , 7*/
+      const ejercicio5 = (cadena = "") =>
+        !cadena
+          ? console.warn("No ha ingresado un texto")
+          : console.log(cadena.split("").reverse().join(""));          
+      ejercicio5("");
+      
+      const ejercicio6 = (cadena = "" , buscar = "") =>{
+        if(!cadena) return console.warn("Tiene que ingresar una cadena de texto");
+        if(!buscar) return console.warn("Tiene que ingresar la palabra que se repite");
+
+        let posicion = 0 ;
+        let contador = 0;        
+        
+        while(posicion !== -1){
+          posicion = cadena.indexOf(buscar , posicion);
+          if(posicion !== -1){
+            posicion++;
+            contador++;
+          }          
+        }              
+
+        if(contador === 0) return console.warn(`No existe la palabra ${buscar} en el texto`)                        
+        console.info(`el texto ${buscar} se repite ${contador} veces`);
+
+      }    
+
+      let texto = "amigos , me gusta jugar , con amigos , amigos son los mejores";            
+      ejercicio6(texto , "amigos");
+      
+
+      const ejercicio7 = (cadena = "")=>{
+        if(!cadena) return console.warn("Tiene que ingresar una cadena de texto");
+        cadena = cadena.toLowerCase();
+        let textoInvertido = cadena.split("").reverse().join("");
+        
+        (textoInvertido === cadena) 
+          ? console.info(`La palabra ${cadena} si es un palindromo porque al reves se lee ${textoInvertido}`)
+          : console.info(`La palabra ${cadena} no es un palindromo porque al reves se lee ${textoInvertido}`);
+      }         
+
+      ejercicio7("aerea");
+      
+      const exercise8 = (cadena = "" , patron = "")=>{
+        if(!cadena) return  console.warn("Tiene que ingresar una cadena de texto")
+        if(!patron) return  console.warn("Tiene que ingresar un patron ")
+        console.log(cadena.replace(new RegExp(patron,"ig"), ""));        
+      }
+
+      exercise8("abc1 ,abc2 ,abc3,abc4" , "abc");
+      
+    
+
+      
+      
+        
+
+  
+      
+    </script>
+  </body>
+</html>

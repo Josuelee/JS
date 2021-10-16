@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>Import Y Export</title>        
+</head>
+<body>
+  <h1>Import y Export</h1>
+  
+  <script src="js/importe.js" type="module"></script>    
+</body>
+</html>
+
+<!--Cuando Exportamos e importamos modulos JS se tiene que poner en el script , type = "module"-->
+
+<!--export: significa que mandaremos una funcion o variable , etc a otro archivo JS -->
+
+<!--import: luego de exportarlo para llamar esa funcion o variable se tiene que importar -->
+
+<!-- Se importa asi :
+  import {nombre de lo que deseo importar} from "nombre y ruta del Archivo" -->
+
+<!--as: Se puede añadir un alias para que la variable /functión que importamos con as , algo asi:
+  import {saludo as saludar,aplaudir as aplauso}
+  ahora si quiero usar la funcion saludo , tengo que usarla como saludar porque ahora asi se llama en el modulo que la importamos , igual para aplaudir ahora su alias es aplauso
+-->
+
+<!-- export default: cuando exportamos por defecto , la funcion o variable que exportamos por defecto se ejecutara    
+  por defecto al momento que se importe , para importar se hace asi:      
+        import Saludar,{} from "nombre de archivo o ruta" 
+        osea se pone import y el nombre de el elemento exportado por defecto , y la destructuracion from "etc etc"-->
+
+<!-- Solo se puede exportar por defecto 1 vez , cuando exportamos por defecto solo a las funciones declaradas se puede agregar cuando se inicializa , a las funciones expresadas , variables y constantes se agrega despues de inicializarse , algo asi: 
+  export default function saludar(){
+    console.log("Hola a todos")
+  }
+  let amigo1 = "josue"
+  const amigo2 = "lee"
+  const amigo3Saludando = () => console.log("Hola te saluda el amigo tres")
+
+  export default amigo1; 
+  export default amigo2; 
+  export default amigo3Saludando; 
+
+  se exporta por defecto despues de la inicializacion , esto es solo un ejemplo , ya que no se puede exportar 3 veces por defecto , solo son 3 ejemplos de 3 situaciones diferentes
+  --> 

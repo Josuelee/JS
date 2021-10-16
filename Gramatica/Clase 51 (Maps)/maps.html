@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Maps</title>    
+</head>
+<body>
+    <script>
+        /* Los maps/mapas son similares a los objetos , se encarga de guardar datos que estan relacionados entre si */
+        /* El primer argumento es la llave y el segundo es el valor */
+        /* A diferencia de los objetos los maps pueden tener llaves de cualquier valor , null , entero etc en cambio los objetos
+            sus llaves solo pueden ser strings */
+        const map = new Map();
+
+        /* Primera forma de guardar datos */
+        map.set("nombre", "josue");
+        map.set("correo" , "lee@gmail.com")
+        map.set("app" , "googlemet")
+        console.log(map)
+
+        /*Segunda forma de guardar datos , dentro de los corchetes se ponen otros corchetes*/
+        const map2 = new Map([
+            ["apellido" , "peter"] , [null , "nulo"] , ["한글", "이근호"]
+        ]);
+        console.log(map2);
+
+        /*Obtener datos , se busca por el nombre de la llave*/
+        console.log(map.get("nombre"))
+        console.log(map2.get("apellido"))
+
+        /* eliminar datos */
+        map.delete("nombre");
+        console.log(map)
+        map2.delete(null);
+        console.log(map2)
+
+        /* Recorrer datos */
+        for(let [key, value] of map){
+            console.log(`llave: ${key}, value: ${value}`)
+        }
+        for(let [key,value] of map2){
+            console.log(`llave: ${key}, value: ${value}`)
+        }
+        /* obtener el tamaño */        
+        console.log(map.size)
+        console.log(map2.size)
+        /* verificar si si existe */
+        console.log(map2.has("apellido"))
+        console.log(map.has("nombre"))
+        
+
+    </script>
+</body>
+</html>

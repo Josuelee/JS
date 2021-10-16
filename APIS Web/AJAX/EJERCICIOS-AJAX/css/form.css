@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
+
+:root{
+  --main-color: #6E2CC6;
+  --second-color: #4ADEC3;
+  --third-color: whitesmoke;
+  --main-font: 'Raleway', sans-serif;
+  --error-color: #EC3521;
+}
+
+*,
+*::after,
+*::before{
+  box-sizing: border-box; 
+}
+
+html{
+  font-family: var(--main-font);
+  font-size: 16px;
+}
+
+body{
+  margin: 0;
+  min-height: 100vh; 
+  background-color: #6E2CC6;
+  color: whitesmoke;
+}
+
+.form{
+  display: flex;
+  flex-direction: column;  
+ 
+  width: 70%;
+  margin: 3rem auto;
+  text-align: center;
+   
+}
+
+
+.form__container{
+  width: 100%;
+  position: relative;  
+}
+
+.form__container::after{
+  content: "Aaaa";
+  background-color: var(--error-color);
+  display: block;
+  width: 100%;
+  margin-top: 0;
+  opacity: 0;  
+  visibility: hidden;  
+  position: absolute;
+  transition: .5s ease opacity , visibility .5s ease ;
+}
+
+.form__container--error::after{
+  visibility: visible;  
+  opacity: 1;
+}
+
+.form__container--name::after{
+  content: "Ingrese un nombre correcto";
+}
+.form__container--email::after{
+  content: "Ingrese un email correcto";
+}
+
+.form__container--textArea::after{
+  content: "El texto NO puede sobrepasar los 255 caracteres";
+}
+
+.form__input{
+  width: 100%;
+  padding: .5rem;
+  outline: none;
+  border: 1px solid;
+  margin-top: 1.5rem;
+  font-size: 1rem;  
+  
+}
+
+
+.form__textArea{
+  resize: none;
+  margin-top: 1.5rem;  
+  outline: none;
+  font-family: var(--main-font);
+  font-size: 1rem;
+  color: #000;
+  width: 100%;
+display: block;
+}
+
+
+.form__button{
+  width: 5rem;
+  margin: 1.5rem auto;
+  border-radius: 10px;
+  outline: none;
+  border: 1px solid ;
+  padding: 7px;
+  background-color: var(--main-color);
+  color: var(--third-color);
+}
+
+
+
+.form__loader{  
+  width: 100px;  
+  margin: 0 auto;
+  display: none;  
+}
+
+.form__response{
+  margin: 0;
+  display: none;
+  font-size: 25px;
+}
+
+.form__loader--active,
+.form__response--active{
+  display: block;
+}
+
+.form [required]:valid{
+  border: 3px solid var(--second-color);  
+}
+
+.form [required]:invalid{
+  border: 2px solid var(--error-color);
+}
+
+
+
+

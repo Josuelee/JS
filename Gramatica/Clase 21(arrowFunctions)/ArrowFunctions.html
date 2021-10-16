@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Arrow Functions</title>    
+    <!--Una nueva forma de declarar las funciones expresadas(anonimas) desde ECMASCRPIT 6 -->
+    <!-- las funciones expresadas son las que no se puede llamar arriba de la funcion creada sino que simpre debe ir
+    abajo -->
+    <h1>Funciones Flecha / Arrow Function</h1>
+    <script>
+        /* Forma antigua */
+        const funcionAntigua = function(){
+            console.log("Soy una funcion antigua");            
+        }
+        /* Estructura const nombre = () =>{}   --- en si se declara la constante luego el nombre es igual a la arrowFunction*/
+        
+        /* 1- se quita la palabra function*/
+        const arrowSinFunction = () => { 
+            console.log("Soy el primer ejemplo de arrow Function");
+        }
+        /* 2- cuando recibe solo 1 parametro se pueden quitar los parentesis */
+        const arrowUnParametro = unicoParametro =>{
+            console.log(unicoParametro)
+        }
+
+        /*3- Cuando la funcion solo tiene 1 linea de codigo de instruccion se pueden quitar las llaves y ademas tiene el return
+        incluido */        
+        const arrowSinLlaves = hola => console.log(hola)
+
+        /*4- Cuando recibe mas parametros entonces si , tiene que llevar parentesis */
+         const arrowConParametros = (a,b) => a+b;
+
+        /* 5-Cuando la funcion tiene mas instrucciones si tiene que llevar llaves y si es necesario return*/
+        const arrowConLlaves = (a,b,...c) => {
+            let resultado = a+b;
+            c.forEach(el=>resultado+=c)//Aca es una funcion arreglo 
+            return resultado;
+        }
+    /* Dato , es una mala practica usar un arrow Function como metodo de un objeto
+        porque el arrowFunction reconoce el contexto de el objeto en que se encuentra en este caso
+        si creo mi funcion flecha dentro de un objeto que esta en el DOM
+        entonces mi funcion reconocera el this de donde esta ese objeto en este caso el DOM
+        en resumen es mala practica crear arrowFunctions en objetos
+        */
+        funcionAntigua();
+        arrowSinFunction();
+        arrowUnParametro("Soy una funcion flecha con un unico parametro");
+        arrowSinLlaves("Holaa soy una funcion flecha sin llaves ");
+        arrowConLlaves(1,2,3,4,5,6,7,8,9,10);
+
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>

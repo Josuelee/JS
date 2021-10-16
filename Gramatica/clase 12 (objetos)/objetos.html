@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Objetos</title>            
+</head>
+<body>
+    <h1>Objetos</h1>
+    <script >
+        
+        
+        const misDatos={
+            nombre: "Josue",
+            apellido: "Lee",
+            telefono1: 54,
+            telefono2: 34,
+            familia: [hermanoMenor=["nombre: Jonathan" , "edad : 17" , "Le gusta ver television"], 
+            menorMayor=["Nombre: Kunji" , "edad: 18" , "Le gusta programar"]],
+            pasatiempo:{
+                guitarra: "La guitarra eslo mejor",
+                bateria: "Me gusta un monton tocar bateria",                                
+            },
+            presentacion: function(){
+                console.log(`Mi nombre es ${this.nombre} y mi apellido es ${this.apellido}`)                
+            }  ,
+            nadissa : ["0-casilla" ]
+
+                       
+
+        }        
+        //Mandar a llamar
+        console.log(misDatos.nombre);
+        console.log(misDatos.apellido)
+        console.log(misDatos.telefono1)
+        console.log(misDatos.telefono2)
+        console.log(misDatos.telefono1 + misDatos.telefono2)
+        console.log(misDatos.familia[0][0])
+        console.log(misDatos.familia[1][0])
+        console.log(misDatos.pasatiempo.guitarra)        
+        console.log(misDatos.pasatiempo.bateria)
+        misDatos.presentacion()
+        //Metodos
+        console.log(Object.keys(misDatos))
+        console.log(Object.values(misDatos))
+        console.log(misDatos.hasOwnProperty("presentacion"));
+
+        
+        
+        
+
+    </script>
+</body>
+</html>

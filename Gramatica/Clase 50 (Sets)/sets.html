@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Sets</title>    
+</head>
+<body>
+    <!-- Un set es un objeto , similar a un arreglo pero no es un arreglo-->
+    <!-- Sus valores no se pueden repetir -->
+
+    <script>
+        /* Agregar los valores directos en el constructor */
+        const set = new Set([1,2,2,2,2,3,3,4,5,6,7,8,9 ,false,false, {nombre:["peter"]} , {nombre:"peter"} ,{nombre:["peter"]} , {nombre: ["Peterlee"]}]);       
+        console.info(set)
+        /* Agregar los valores despues del constructor */
+        const set2 = new Set();
+        set2.add(1)
+        set2.add(2)
+        set2.add(3)
+        set2.add(4)
+        set2.add(5)
+        console.log(set2)
+        /* mandar a llamar los valores de un set :
+            primero se convierte en arreglo para luego poder acceder a el , de la siguiente forma*/        
+        const arr = Array.from(set2)
+        console.log(`"${arr[2]}" Obtener valores del set`)
+        /* Ver el tamaño o ancho del set*/
+        console.log(set.size)
+        /* Eliminar un elemento del set */
+        set.delete(5)
+        set.delete(1)
+        set.delete(2)
+        set.delete(3)
+        console.log(set)
+        /* Verificar si un elemento existe */
+        console.log(set.has(5))
+        console.log(set.has(false))
+        /* Recorriendo set */
+        console.info(`Recorriendo set 1 con for OF`)
+        for(let element of set){
+            console.info(element)
+        }
+        console.info(`Recorriendo set 2 con forEach`)
+        set2.forEach(el=>console.log(el))        
+        /* las 2 formas es lo mismo */
+
+        /* Vaciar un set */
+        set.clear();
+        console.log(set)
+        
+
+
+
+        
+
+
+
+
+    </script>
+</body>
+</html>

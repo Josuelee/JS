@@ -1,0 +1,25 @@
+*,
+*::after,
+*::before{
+  box-sizing: border-box;  
+}
+html{
+  box-sizing: inherit;
+  text-align: center; 
+}
+
+.poke-grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.poke-grid__item{
+  border-radius: 10px;
+  border: 1px ridge #f23f;
+  overflow-x: hidden;
+}
+
+.poke-grid__text{
+  background-color: greenyellow;
+}
+

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Proxys</title>    
+</head>
+<body>
+    <script>
+        /* Una proxys hace una vinculacion entre el objeto original y 
+            el objeto copia y atraves del objeto manejador se puede hacer validaciones antes de hacer la asignacion */
+
+            const persona = {
+                nombre: "",
+                apellido: "",
+                edad: 0
+            }                        
+            const manejador = {
+                set(obj, proper,value){
+                    if((proper === "nombre")&&(typeof value !== "string")) return console.warn(`El nombre "${value}" que ingreso no es una cadena de texto 
+                    o no ingreso un texto`);
+                    if((proper === "apellido") && (typeof value !== "string")) return console.warn(`El apellido "${value}" que ingreso no es una cadena de texto`)
+                    if ((proper === "edad") && (typeof value !== "number") || (value < 0) || (value  === undefined)) return console.warn(`tu edad "No es un numero o es un numero negativo o tiene que ingresar un numero"`)
+
+                    obj[proper] = value ;
+                }
+            //al objeto con sus propiedades , 
+            //le estamos dando el valor que indica el usuario , aca para acceder a la propiedad se utiliza los corchetes (LINEA 20)
+            }
+            const josue = new Proxy(persona , manejador)
+            josue.nombre = "a",
+            josue.apellido = "lee"
+            josue.edad = 9            
+            console.log(josue)
+    </script>
+</body>
+</html>

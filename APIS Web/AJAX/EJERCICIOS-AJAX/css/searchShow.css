@@ -1,0 +1,234 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap");
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+:root {
+  --background: #eaf2f8;
+  --main-font: "Roboto", sans-serif;
+  --main-color: #d6d6ea;
+  --second-color: #2ab569;
+  --third--color: #2ebbe1;
+  --fourth--color: #e12e2e;
+  --withHover: 5px 10px 5px 0px rgba(0, 0, 0, 0.5);
+  --withoutHover: 2px 5px 3px 0px rgba(0, 0, 0, 0.5);
+  --font-color: #222;
+  --font-color-second: rgba(55, 55, 55, 0.8);
+}
+
+html {
+  box-sizing: inherit;
+}
+
+main {
+  margin: 0 auto;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  min-height: 100vh;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--background);
+}
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.loader {
+  margin: 0 auto;
+  width: 100px;
+}
+.form {
+  border-radius: 20px;
+  background-color: #fff;
+  margin: 5rem auto 0;
+  width: 50%;
+  height: 25vh;
+  text-align: center;
+  box-shadow: 2px 2px 2px var(--third--color), -2px -2px 2px var(--second-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.form__title,
+.section-shows__title {
+  color: #222;
+  font-family: sans-serif;
+  margin: 0;
+}
+
+@media screen and (max-width: 500px) {
+  .form {
+    width: 70%;
+  }
+  .form__title {
+    font-size: 1.5rem;
+  }
+}
+
+.form__input {
+  padding: 1.2rem;
+  border-radius: 8px;
+  border-style: none;
+  outline: none;
+  box-shadow: 1px 1px 1px var(--main-color) inset,
+    -2px -2px 2px var(--main-color) inset;
+  background-color: #ffff;
+  font-size: 1rem;
+  color: #222;
+  width: 80%;
+}
+
+.section-shows {
+  text-align: center;
+  margin: 5rem 0;
+  height: auto;
+}
+
+.section-shows__header{
+  margin-bottom: 3rem;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.section-shows__back{
+  font-size: 1.2rem;
+}
+.show-grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-auto-rows: 350px;
+  gap: 2rem;
+}
+
+.show {
+  margin: 0;
+  border: 2px ridge var(--fourth--color);
+  transition: transform 0.5s ease;
+}
+.show--individual {
+  width: 30%;
+  margin: 0 auto;
+}
+.show:hover {
+  transform: scale(0.9);
+}
+.show__img {
+  height: 100%;
+  object-fit: cover;
+}
+
+.show__text {
+  font-family: var(--main-font);
+  font-size: 1.3rem;
+  letter-spacing: 2px;
+}
+
+/* Individual show */
+
+.showItem {
+  display: flex;
+  width: 70%;
+  margin: 0 auto;
+  box-shadow: var(--withoutHover);
+  transition: box-shadow 0.5s ease;
+  background-color: #fff;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+.showItem:hover {
+  box-shadow: var(--withHover);
+}
+
+.showItem__container {
+  width: 100%;
+}
+
+.showItem__img {
+  height: 100%;
+  object-fit: cover;
+}
+
+.showItem__container {
+  height: auto;
+}
+.showItem__img {
+  height: 100%;
+}
+
+.showItem__container2 {
+  display: flex;
+  align-items: center;
+}
+
+.showItem__information {
+  margin: 0 auto;
+  width: 90%;
+  text-align: center;
+}
+.showItem__title {
+  color: var(--font-color);
+  font-family: var(--main-font);
+  letter-spacing: 3px;
+  font-size: 2rem;
+  margin: 0;
+  display: inline-block;
+  border-bottom: #e12e2e 2px solid;
+}
+
+.showItem__description {
+  text-align: left;
+  color: var(--font-color-second);
+  font-family: var(--main-font);
+  font-size: 1rem;
+  width: 90%;
+}
+
+.showItem__rating {
+  text-align: left;
+  font-family: var(--main-font);
+  color: var(--third--color);
+}
+
+.showItem__rating--span {
+  color: var(--font-color);
+}
+
+.showItem__buttons {
+  margin: 0 auto;
+  width: 80%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.showItem__button {
+  outline: none;
+  border: var(--second-color) 1px solid;
+  background-color: transparent;
+  border-radius: 5px;
+  padding: 0.4rem;
+  font-family: var(--main-font);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: 0.5s ease background-color, 0.5s ease color;
+}
+.showItem__button:hover {
+  background-color: var(--second-color);
+}
+.showItem__button:active {
+  transform: scale(0.9);
+}

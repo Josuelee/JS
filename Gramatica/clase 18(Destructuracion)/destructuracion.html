@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Destructuracion</title>
+</head>
+<body>
+    <!-- Destructuracion su definicion es darle los valores de un objeto o un arreglo a unas variables de forma dinamica -->
+    <script>
+        const mejorAmigo ={
+            nombre: "moped",
+            apellido: "lee",
+            edad: 14        ,    
+
+            presentacion: `Me gusta jugar mucho con ${this.nombre} y me gusta molestarlo con su apellido que es ${this.apellido}`        
+            }
+    /*OBJETOS -- No importa el orden pero si los nombres , aca lo que hare es que , los valores de las propiedades del objeto 
+    se las dare a una variable ,   la destructuracion detecta que la variable 
+     tiene el mismo nombre que la propiedad del objeto y le asigna el valor*/
+        const {nombre, apellido , edad}  = mejorAmigo; 
+        console.log(nombre, apellido, edad)                 
+
+    /*ARREGLOS -- En los arreglos es similar , solo que la diferencia con los objetos es que no importan los nombres dentro
+    del arreglo sino que lo que importa es el orden en que estan , en este caso , si perro es la primera casilla ,
+    la primera variable que ponga dentro de la destructuracion tendra el valor perro  */
+        const animales = ["perro" , "leon" ,"delfin" , "tiburon"];
+        const [perro, leon , delfin , tiburon] = animales
+        console.log(perro , leon , delfin , tiburon);
+    
+    </script>
+    
+
+</body>
+</html>

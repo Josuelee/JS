@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Buscador de canciones</title>
+    <link rel="stylesheet" href="css/searchSings.css" />
+  </head>
+  <body>
+    <form class="form" id="form">
+      <h1 class="form__title">BUSCADOR DE CANCIONES</h1>
+      <input type="text" class="form__input" placeholder="Nombre Cantante" name="artist" required/>
+      <input type="text" class="form__input" placeholder="Nombre Cancion" name="sing" required/>
+      <input type="submit" value="BUSCAR" class="form__button" id="search" />
+    </form>
+
+    <section class="search-sing">
+      <h2 class="search-sing__title">CANCIÓN</h2>
+      <div class="sing-container" id="sing-container"></div>
+    </section>
+
+    <template id="template">
+      <article class="singer">
+        <section class="singer__about">
+          <h3 class="singer__title">INFORMACIÓN</h3>
+          <figure class="singer__figure">
+            <img src="" alt="" class="singer__img" id="img"/>
+            <figcaption class="singer__name" id="artist"></figcaption>
+          </figure>
+          <p class="singer__information" id="information"></p>
+        </section>
+        <section class="singer__sing">
+          <h3 class="singer__title">LYRICS</h3>
+          <p class="singer__lyrics" id="lyrics"></p>
+        </section>
+      </article>
+    </template>
+    <script src="js/Clase137(Buscador de canciones).js"></script>
+  </body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Ejercicio de clases y herencia</title>
+  </head>
+  <body>
+      <h1>Ejercicio De niveles</h1>
+    <script>
+      class Usuario {
+        constructor(nombre, usuario) {
+          this.nombre = nombre;
+          this.usuario = usuario;
+        }
+        saludar() {
+          console.log(`Hola soy ${this.nombre} y mi User es ${this.usuario}`);
+        }
+      }
+      class Level1 extends Usuario {
+        constructor(nombre, usuario) {
+          super(nombre, usuario);
+        }
+        comentar() {
+          console.log(
+            `Ahora El usuario ${this.usuario} es nivel 1 entonces puede comentar `
+          );
+        }
+      }
+      class Level2 extends Usuario {
+          super(nombre, usuario);
+        constructor(nombre, usuario) {
+        }
+
+        reaccionar() {
+          console.log(
+            `El usuario ${this.usuario} es nivel 2 entonces puede reaccionar`
+          );
+        }
+      }
+
+      let nivel = 2;
+      let User;
+      let nombre = "Moped",
+        nombreUsuario = "MP_";
+
+      if (nivel === 1) {
+        User = new Level1(nombre, nombreUsuario);
+        User.comentar();
+      } else if (nivel === 2) {
+        User = new Level2(nombre, nombreUsuario);
+        User.reaccionar();
+      } else if (nivel === 0) {
+        User = new Usuario(nombre, nombreUsuario);
+        User.saludar();
+        console.log(`El usuario ${nombreUsuario} no esta en ningun nivel`);
+      } else {
+        console.log(`No existe un nivel con ese numero`);
+      }
+    </script>
+  </body>
+</html>
