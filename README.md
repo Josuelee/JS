@@ -2,7 +2,7 @@
 ## Author: JonMircha
 ### Canal de Youtube: https://www.youtube.com/c/jonmircha  
 [Click aquí para aprender Javascript GRATIS con JonMircha 👈](https://aprendejavascript.org)  
-*Aquí encontraras todas las notas y ejercicios que yo fuí escribiendo del curso de JavasCript de Jonmircha*  
+*Aquí encontraras todas las notas y ejercicios que yo fuí escribiendo del curso de JavasCript de Jonmircha*      
 ![](https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/200px-Unofficial_JavaScript_logo_2.svg.png)  
 
 
